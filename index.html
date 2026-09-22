@@ -1,113 +1,2269 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Lâm An Bình – Portfolio</title><link rel='preconnect' href='https://fonts.googleapis.com'><link rel='preconnect' href='https://fonts.gstatic.com' crossorigin><link href='https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600&display=swap' rel='stylesheet'><style>:root{--acc:#8a2f1d}
-*{margin:0;padding:0;box-sizing:border-box}
-img{max-width:100%}
-.container{max-width:1180px;margin:0 auto;padding:0 28px}
-.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px 40px}
-.skill span{font-size:.92rem;display:flex;justify-content:space-between}
-.skill em{font-style:normal;opacity:.65;font-size:.82rem}
-.bar{height:8px;border-radius:99px;background:rgba(128,128,128,.2);margin-top:7px;overflow:hidden}
-.bar i{display:block;height:100%;border-radius:99px;background:var(--acc);animation:grow 1.2s ease}
-@keyframes grow{from{width:0}}
-.chips{display:flex;flex-wrap:wrap;gap:10px}
-.chips span{padding:7px 18px;border-radius:999px;border:1px solid var(--acc);font-size:.88rem;opacity:.9}
-.tl{position:relative;margin-left:8px;padding-left:28px;border-left:2px solid var(--acc)}
-.tl-item{position:relative;margin-bottom:24px}
-.tl-item::before{content:"";position:absolute;left:-35px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px rgba(128,128,128,.12)}
-.tl-year{font-weight:700;color:var(--acc);font-size:1.02rem}
-.tl-item p{margin-top:4px;font-size:.95rem;opacity:.9}
-.quote{margin-top:16px;padding:14px 22px;border-left:4px solid var(--acc);font-style:italic;opacity:.92;font-size:1.02rem}
-.twocol{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
-@media(max-width:860px){.twocol{grid-template-columns:1fr}}
-.topnav{position:sticky;top:0;z-index:60;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;
- padding:10px 60px 10px 16px;background:rgba(255,255,255,.78);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
-.topnav a{padding:6px 15px;border-radius:999px;font-size:.86rem;font-weight:600;color:inherit;text-decoration:none;opacity:.8}
-.topnav a:hover{background:var(--acc);color:#fff;opacity:1}
-.awgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:16px}
-@media(max-width:520px){.awgrid{grid-template-columns:1fr}}
-.award{display:flex;gap:16px;align-items:flex-start;border-left:5px solid var(--acc) !important;margin-bottom:0 !important;min-width:0}
-.medal{font-size:1.9rem;width:56px;height:56px;flex:0 0 56px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(128,128,128,.1)}
-.rk-gold{border-left-color:#f59e0b !important}.rk-gold .medal{background:linear-gradient(135deg,#fef3c7,#fcd34d)}
-.rk-silver{border-left-color:#94a3b8 !important}.rk-silver .medal{background:linear-gradient(135deg,#f1f5f9,#cbd5e1)}
-.rk-bronze{border-left-color:#c2703d !important}.rk-bronze .medal{background:linear-gradient(135deg,#fde8d7,#e8b48c)}
-.rk-merit{border-left-color:#818cf8 !important}.rk-merit .medal{background:linear-gradient(135deg,#e0e7ff,#c7d2fe)}
-.rklab{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:.75;margin-bottom:4px}
-.rk-gold .rklab{color:#b45309}.rk-silver .rklab{color:#64748b}.rk-bronze .rklab{color:#9a5b2d}.rk-merit .rklab{color:#6366f1}
-.awbody{flex:1;min-width:0}
-.awthumb{flex:0 0 92px;width:92px;height:92px;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.15);display:block}
-.awthumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.awthumb:hover img{transform:scale(1.12)}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-.subtitle{opacity:.65;font-size:.95rem;margin:-14px 0 20px}
-.lb{position:fixed;inset:0;background:rgba(8,8,12,.88);display:none;align-items:center;justify-content:center;z-index:300;cursor:zoom-out}
-.lb.open{display:flex}
-.lb img{max-width:93vw;max-height:92vh;border-radius:8px;box-shadow:0 20px 80px rgba(0,0,0,.6)}
-.pts{margin:12px 0 2px 20px;font-size:.93rem}
-.pts li{margin-bottom:7px;opacity:.92}
-.pts li::marker{color:var(--acc)}
-body.lay-split header .container{display:grid;grid-template-columns:auto 1fr;column-gap:48px;row-gap:2px;text-align:left;align-items:center;justify-items:start}
-body.lay-split header .avatar,body.lay-split header .monogram{grid-row:1/5;margin-bottom:0}
-body.lay-split header .stats{justify-content:flex-start;margin-top:22px}
-@media(max-width:760px){body.lay-split header .container{display:block;text-align:center}}
-body.aw-list .awgrid{grid-template-columns:1fr}
-body.aw-list .awthumb{flex:0 0 128px;width:128px;height:128px}
-body.act-zig .actwrap .card{width:94%}
-body.act-zig .actwrap .card:nth-child(even){margin-left:6%;border-left-width:6px;border-left-style:solid;border-left-color:var(--acc)}
-body.act-zig .actwrap .card:nth-child(odd){border-right:6px solid var(--acc)}
-section{padding:44px 0 6px}
-.stats{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:30px}
-.doclinks{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:14px}
-.gallery a{display:block;aspect-ratio:4/3;overflow:hidden}
-.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.gallery a:hover img{transform:scale(1.07)}
-.certgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.certimg{max-width:520px;width:100%;margin-top:14px}
-.avatar{width:132px;height:132px;border-radius:50%;object-fit:cover}
-.monogram{width:132px;height:132px;display:inline-flex;align-items:center;justify-content:center;font-size:44px;font-weight:700}
-.lang-switch{position:fixed;top:14px;right:14px;z-index:99;display:flex;gap:2px;border-radius:999px;padding:4px}
-.lbtn{border:0;background:transparent;padding:5px 14px;border-radius:999px;cursor:pointer;font-size:.85rem;font-weight:700}
-.pane-en{display:none}
-body.lang-en .pane-en{display:block}
-body.lang-en .pane-vi{display:none}
-footer{margin-top:56px;padding:28px 0;text-align:center;font-size:.85rem}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lâm An Bình – Portfolio Học Sinh Chuyên Tin | HSGS</title>
+  <meta name="description" content="Hồ sơ học tập & nghiên cứu của Lâm An Bình - Học sinh lớp 11A2 Chuyên Tin, THPT Chuyên KHTN (HSGS), ĐHQG Hà Nội. Nghiên cứu AI, IoT và các dự án công nghệ vì cộng đồng.">
+  
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-body{font-family:'Source Serif 4',Georgia,serif;background:#f7f3ea;color:#241f1a;line-height:1.75}
-.sheet{max-width:1120px;margin:34px auto 0;background:#fffdf8;border:1px solid #e2d9c8;box-shadow:0 10px 40px rgba(90,70,40,.12);padding:0 0 30px}
-header{padding:62px 56px 34px;text-align:center;border-bottom:3px double #b9a27e}
-.jhead{font-family:'Source Sans 3',sans-serif;font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;color:#8d7b5e;
- border-bottom:1px solid #d8ccb4;padding-bottom:12px;margin-bottom:30px;display:flex;justify-content:space-between}
-.avatar{border-radius:4px;border:1px solid #d8ccb4;box-shadow:4px 4px 0 #e8dfcd;margin-bottom:18px}
-.monogram{border-radius:4px;background:#241f1a;color:#f4e9d3;margin-bottom:18px;font-family:'Source Serif 4',serif}
-h1{font-size:2.5rem;font-weight:700;color:#1c1712;line-height:1.2}
-.school{font-style:italic;color:#6e5f49;margin-top:10px}
-.tagline{margin-top:16px;display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:.85rem;letter-spacing:.6px;
- color:#8a2f1d;border-top:1px solid #d8ccb4;border-bottom:1px solid #d8ccb4;padding:7px 4px}
-.stats{margin-top:26px;gap:0;border:1px solid #d8ccb4;display:inline-flex;border-radius:2px;overflow:hidden}
-.stat{padding:14px 26px;min-width:160px;border-right:1px solid #d8ccb4;background:#fbf7ee}
-.stat:last-child{border-right:0}
-.stat b{display:block;font-size:1.45rem;color:#8a2f1d}
-.stat span{font-family:'Source Sans 3',sans-serif;color:#6e5f49;font-size:.8rem}
-main.container{max-width:1120px;padding:0 64px}
-h2{font-size:1.35rem;margin-bottom:18px;color:#1c1712;font-weight:700;counter-increment:sec}
-h2::before{content:counter(sec,upper-roman) ". ";color:#8a2f1d}
-body{counter-reset:sec}
-.card{background:transparent;border:0;border-top:1px solid #e2d9c8;padding:18px 4px;margin-bottom:0}
-.card:first-of-type{border-top:0}
-.card h3{font-size:1.08rem;font-weight:600;color:#241f1a}
-.card .org{font-style:italic;color:#6e5f49;font-size:.92rem}
-.card p{margin-top:8px;color:#3d352b;font-size:.98rem;text-align:justify}
-.badge{display:inline-block;font-family:'Source Sans 3',sans-serif;background:#f0e6d2;color:#8a2f1d;padding:2px 12px;border-radius:2px;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
-a{color:#8a2f1d;text-decoration:none;border-bottom:1px dotted #b9a27e}
-a:hover{border-bottom-style:solid}
-.doclinks a{font-family:'Source Sans 3',sans-serif;background:#fbf7ee;border:1px solid #d8ccb4;padding:6px 14px;border-radius:2px;font-size:.83rem}
-.gallery a{border:1px solid #d8ccb4;padding:6px;background:#fff;border-radius:2px;box-shadow:3px 3px 0 #ece2cf}
-.gallery img{border-radius:0}
-.research{border:1px solid #d8ccb4 !important;border-left:4px solid #8a2f1d !important;background:#fbf7ee !important;padding:20px 22px !important;border-radius:2px}
-.doi{font-family:'Source Sans 3',monospace;font-size:.85rem;color:#6e5f49}
-.empty{color:#8d7b5e;font-style:italic;border:1px dashed #cbbc9f;border-radius:2px;padding:16px 20px;background:#fbf7ee}
-footer{border-top:3px double #b9a27e;color:#8d7b5e;font-family:'Source Sans 3',sans-serif;max-width:1120px;margin:56px auto 0}
-.lang-switch{background:rgba(255,253,248,.92);border:1px solid #d8ccb4;box-shadow:0 4px 14px rgba(90,70,40,.15)}
-.lbtn{color:#6e5f49;font-family:'Source Sans 3',sans-serif}.lbtn.active{background:#8a2f1d;color:#fff}
-.certimg{border:1px solid #d8ccb4;padding:6px;background:#fff}
-</style></head><body class='lay-center aw-list act-cards'><div class='lang-switch'><button class='lbtn' data-l='en'>EN</button><button class='lbtn' data-l='vi'>VI</button></div><div class='pane-vi' lang='vi'><div class='sheet'><header><div class='container'><div class='jhead'><span>PORTFOLIO-VN</span><span>Tập 1 · Hồ sơ học sinh · 2026</span></div><img class='avatar' src='assets/img/avatar.jpg' alt='Lâm An Bình'><h1>Lâm An Bình</h1><div class='school'>THPT Chuyên Khoa học Tự nhiên (HSGS) · Lớp 11 A2 Tin</div><div class='tagline'>Học sinh chuyên Tin · Tác giả chính bài báo AI/IoT · Trợ giảng HSGS Code Camp</div><div class='stats'><div class='stat'><b>2026</b><span>Bài báo quốc tế (tác giả chính)</span></div><div class='stat'><b>Gold</b><span>ICPC 2026 – Hàn Quốc</span></div><div class='stat'><b>5+</b><span>Dự án thiện nguyện</span></div></div></div></header><nav class='topnav'><a href='#about-vi'>Giới thiệu</a><a href='#research-vi'>Nghiên cứu</a><a href='#activities-vi'>Hoạt động</a><a href='#awards-vi'>Thành tích</a><a href='#skills-vi'>Kỹ năng</a><a href='#journey-vi'>Hành trình</a></nav><main class='container'><section id='about-vi'><h2>Giới thiệu</h2><div class='card'><p style='margin-top:0'>Mình là Lâm An Bình, học sinh lớp 11 chuyên Tin, trường THPT Chuyên Khoa học Tự nhiên (HSGS), ĐHQG Hà Nội. Mình quan tâm đến AI, IoT và các ứng dụng công nghệ giải quyết vấn đề đô thị: năm 2026 mình là tác giả chính của bài báo quốc tế về hệ thống đỗ xe thông minh ứng dụng AI và IoT tại Hà Nội, đồng thời cùng nhóm đạt Gold Award tại ICPC 2026 (Hàn Quốc). Mình tự phát triển phần mềm luyện từ vựng IELTS/SAT “Vocab Catalyst” tích hợp Gemini AI, làm trợ giảng và tình nguyện viên tại HSGS Code Camp, đạt danh hiệu “Học sinh 3 Tốt” cấp trường và tham gia nhiều dự án thiện nguyện.</p><blockquote class='quote'>“Thành phố thông minh bắt đầu từ những bài toán rất đời thường — như tìm một chỗ đỗ xe.”</blockquote></div></section><section id='research-vi'><h2>Nghiên cứu khoa học</h2><div class='card research reveal'><span class='badge'>Tác giả chính (first author)</span><h3>Applications of AI and IoT to Develop Intelligent Car Parking Systems in Hanoi, Vietnam</h3><div class='org'>International Journal of Multidisciplinary on Science and Management (IJMSM), Vol 3, Issue 2 (2026), pp. 163–168</div><div class='doi'>DOI: 10.71141/30485037/V3I2P119</div><p>Nghiên cứu đề xuất hệ thống đỗ xe thông minh (IPS) cho Hà Nội – nơi hạ tầng đỗ xe mới đáp ứng 8–10% nhu cầu – sử dụng cảm biến siêu âm/địa từ kết hợp thị giác máy tính (OpenCV) để nhận diện biển số tự động, cập nhật dữ liệu chỗ đỗ theo thời gian thực và cho phép người dùng đặt chỗ qua ứng dụng di động.</p><div class='doclinks'><a href='assets/docs/applications-of-ai-and-iot-to-develop-intelligent-car-parkin.pdf'>📄 Toàn văn bài báo (PDF)</a></div><div class='gallery'><a href='assets/img/research-0.jpg'><img src='assets/img/research-0.jpg' alt='research figure' loading='lazy'></a><a href='assets/img/research-1.jpg'><img src='assets/img/research-1.jpg' alt='research figure' loading='lazy'></a><a href='assets/img/research-2.jpg'><img src='assets/img/research-2.jpg' alt='research figure' loading='lazy'></a><a href='assets/img/research-3.jpg'><img src='assets/img/research-3.jpg' alt='research figure' loading='lazy'></a></div></div></section><section id='activities-vi'><h2>Hoạt động ngoại khóa & Dự án</h2><div class='actwrap'><div class='card reveal'><h3>Sản phẩm cá nhân: Vocab Catalyst – phần mềm luyện từ vựng IELTS/SAT bằng AI</h3><p>Ứng dụng desktop tự phát triển giúp luyện từ vựng cho kỳ thi IELTS/SAT: sinh bài tập bằng AI, giải thích lỗi sai tức thì, ngân hàng lỗi sai để tái luyện tập và lộ trình học cá nhân hóa — biến việc học từ vựng thành hành trình có kế hoạch, đo lường được.</p><ul class='pts'><li>Ứng dụng desktop Python với giao diện CustomTkinter gồm 4 tab: Luyện tập · Ngân hàng lỗi sai · Lịch học · Nhắc nhở; dữ liệu lưu cục bộ bằng SQLite.</li><li>Sinh bộ bài luyện theo kỳ thi (SAT/IELTS), chủ đề và dạng bài; trả lời sai được Google Gemini AI giải thích ngay và tự động lưu vào Mistake Bank để tạo bài tái luyện tập.</li><li>AI tạo lộ trình học 7 ngày dựa trên kết quả gần nhất; tab lịch cho phép đánh dấu nhiệm vụ mỗi ngày và hệ thống nhắc học đúng giờ đã hẹn.</li><li>Kiến trúc 4 lớp tách bạch: giao diện CustomTkinter → điều phối CatalystApp (threading, logic thích ứng) → lớp dịch vụ GeminiService + db.py → Google Gemini API và cơ sở dữ liệu SQLite.</li></ul><div class='doclinks'><a href='assets/docs/bao-cao-ky-thuat-vocab-catalyst-30-trang-pdf.pdf'>📜 Báo cáo kỹ thuật Vocab Catalyst – 30 trang (PDF)</a></div><div class='gallery'><a href='assets/img/act0-0.jpg'><img src='assets/img/act0-0.jpg' alt='Sản phẩm cá nhân: Vocab Catalyst – phần mềm luyện từ vựng IELTS/SAT bằng AI' loading='lazy'></a><a href='assets/img/act0-1.jpg'><img src='assets/img/act0-1.jpg' alt='Sản phẩm cá nhân: Vocab Catalyst – phần mềm luyện từ vựng IELTS/SAT bằng AI' loading='lazy'></a><a href='assets/img/act0-2.jpg'><img src='assets/img/act0-2.jpg' alt='Sản phẩm cá nhân: Vocab Catalyst – phần mềm luyện từ vựng IELTS/SAT bằng AI' loading='lazy'></a><a href='assets/img/act0-3.jpg'><img src='assets/img/act0-3.jpg' alt='Sản phẩm cá nhân: Vocab Catalyst – phần mềm luyện từ vựng IELTS/SAT bằng AI' loading='lazy'></a><a href='assets/img/act0-4.jpg'><img src='assets/img/act0-4.jpg' alt='Sản phẩm cá nhân: Vocab Catalyst – phần mềm luyện từ vựng IELTS/SAT bằng AI' loading='lazy'></a><a href='assets/img/act0-5.jpg'><img src='assets/img/act0-5.jpg' alt='Sản phẩm cá nhân: Vocab Catalyst – phần mềm luyện từ vựng IELTS/SAT bằng AI' loading='lazy'></a><a href='assets/img/act0-6.jpg'><img src='assets/img/act0-6.jpg' alt='Sản phẩm cá nhân: Vocab Catalyst – phần mềm luyện từ vựng IELTS/SAT bằng AI' loading='lazy'></a></div></div><div class='card reveal'><h3>Sản phẩm cá nhân: EDU-Bot AI – trợ lý luyện thi tương tác</h3><p>Giải pháp kết hợp AI, IoT và Robotics: người bạn đồng hành tương tác giúp tối ưu việc luyện tiếng Anh chuyên sâu (IELTS/SAT) qua giao tiếp tự nhiên và phản hồi thông minh theo thời gian thực.</p><ul class='pts'><li>Cá nhân hóa trải nghiệm: tự động điều chỉnh lộ trình và độ khó theo năng lực thực tế của người học.</li><li>Tối ưu phản xạ giao tiếp: môi trường tương tác 100% tiếng Anh giúp xóa bỏ rào cản tâm lý khi nói.</li><li>Số hóa kết quả: theo dõi tiến độ học tập chi tiết qua hệ thống dữ liệu trực quan.</li></ul><div class='gallery'><a href='assets/img/act1-0.jpg'><img src='assets/img/act1-0.jpg' alt='Sản phẩm cá nhân: EDU-Bot AI – trợ lý luyện thi tương tác' loading='lazy'></a></div></div><div class='card reveal'><h3>Trợ giảng, Tình nguyện viên &amp; Quản lý (Manager) – HSGS Code Camp</h3><p>Trợ giảng, tình nguyện viên và đảm nhận vai trò Quản lý (Manager) tại các khóa HSGS Code Camp do Trường ĐH Khoa học Tự nhiên tổ chức — trong đó có khóa Archimedes Code Camp 2026 — hỗ trợ dạy lập trình cho học sinh.</p><div class='doclinks'><a href='assets/docs/chung-nhan-tro-giang-hsgs-code-camp.pdf'>📜 Chứng nhận Trợ giảng HSGS Code Camp</a><a href='assets/docs/chung-nhan-tinh-nguyen-vien-hsgs-code-camp.pdf'>📜 Chứng nhận Tình nguyện viên HSGS Code Camp</a><a href='assets/docs/chung-nhan-manager-archimedes-code-camp.pdf'>📜 Chứng nhận Manager – Archimedes Code Camp</a></div></div><div class='card reveal'><h3>Chương trình trải nghiệm tại ĐH CUHK Thâm Quyến</h3><p>Tham gia và nhận chứng nhận chương trình của Đại học Trung văn Hồng Kông (CUHK), cơ sở Thâm Quyến.</p><div class='doclinks'><a href='assets/docs/chung-nhan-h-cuhk-tham-quyen.pdf'>📜 Chứng nhận ĐH CUHK Thâm Quyến</a></div></div><div class='card reveal'><h3>Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)</h3><p>Tham gia tặng quà, động viên bệnh nhi có hoàn cảnh khó khăn tại BV Đa khoa Xanh Pôn; được Bệnh viện gửi Thư cảm ơn.</p><div class='doclinks'><a href='assets/docs/thu-cam-on-cua-bv-a-khoa-xanh-pon.pdf'>📜 Thư cảm ơn của BV Đa khoa Xanh Pôn</a></div><div class='gallery'><a href='assets/img/act4-0.jpg'><img src='assets/img/act4-0.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a><a href='assets/img/act4-1.jpg'><img src='assets/img/act4-1.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a><a href='assets/img/act4-2.jpg'><img src='assets/img/act4-2.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a><a href='assets/img/act4-3.jpg'><img src='assets/img/act4-3.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a><a href='assets/img/act4-4.jpg'><img src='assets/img/act4-4.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a><a href='assets/img/act4-5.jpg'><img src='assets/img/act4-5.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a><a href='assets/img/act4-6.jpg'><img src='assets/img/act4-6.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a><a href='assets/img/act4-7.jpg'><img src='assets/img/act4-7.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a><a href='assets/img/act4-8.jpg'><img src='assets/img/act4-8.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a><a href='assets/img/act4-9.jpg'><img src='assets/img/act4-9.jpg' alt='Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)' loading='lazy'></a></div></div><div class='card reveal'><h3>Các dự án thiện nguyện khác</h3><p>Dự án hỗ trợ bệnh nhân nhi tại BV Đa khoa Hà Đông · Dự án chia sẻ cùng đồng bào vùng lũ Yên Bái · Nhóm “Ong chăm” xây trường tại Nghệ An · Từ thiện tại BV Hà Đông (lớp 9) · Thành viên đội bóng đá Trường KHTN.</p><div class='doclinks'><a href='assets/docs/da-benh-nhan-nhi-bv-ha-ong.pdf'>📜 DA bệnh nhân nhi BV Hà Đông</a><a href='assets/docs/da-chia-se-ong-bao-lu-yen-bai.pdf'>📜 DA chia sẻ đồng bào lũ Yên Bái</a><a href='assets/docs/nhom-ong-cham-xay-truong-nghe-an.pdf'>📜 Nhóm Ong chăm xây trường Nghệ An</a><a href='assets/docs/gcn-tu-thien-bv-ha-ong-lop-9.pdf'>📜 GCN Từ thiện BV Hà Đông (lớp 9)</a><a href='assets/docs/hoc-sinh-3-tot-cap-truong.pdf'>📜 Học sinh 3 Tốt cấp Trường</a></div></div><div class='card reveal'><h3>Trải nghiệm ngoại khóa Tuyên Quang 2026</h3><p>Chuyến trải nghiệm ngoại khóa tại Tuyên Quang cùng học sinh nhiều trường: sinh hoạt chuyên đề tại hội trường, giao lưu và các hoạt động làm việc nhóm.</p><div class='gallery'><a href='assets/img/act6-0.jpg'><img src='assets/img/act6-0.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-1.jpg'><img src='assets/img/act6-1.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-2.jpg'><img src='assets/img/act6-2.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-3.jpg'><img src='assets/img/act6-3.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-4.jpg'><img src='assets/img/act6-4.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-5.jpg'><img src='assets/img/act6-5.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-6.jpg'><img src='assets/img/act6-6.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-7.jpg'><img src='assets/img/act6-7.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-8.jpg'><img src='assets/img/act6-8.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-9.jpg'><img src='assets/img/act6-9.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a><a href='assets/img/act6-10.jpg'><img src='assets/img/act6-10.jpg' alt='Trải nghiệm ngoại khóa Tuyên Quang 2026' loading='lazy'></a></div></div></div></section><section id='awards-vi'><h2>Thành tích & Giải thưởng</h2><div class='awgrid'><div class='card award reveal rk-part'><div class='medal'>🏆</div><div class='awbody'><span class='rklab'>Thành tích</span><h3>Bằng khen Học sinh xuất sắc – Lớp 10</h3><div class='doclinks'><a href='assets/docs/bang-khen-hoc-sinh-xuat-sac-lop-10.pdf'>📜 Xem chứng nhận (PDF)</a></div></div></div><div class='card award reveal rk-part'><div class='medal'>🏆</div><div class='awbody'><span class='rklab'>Thành tích</span><h3>Giấy chứng nhận tham dự Olympic Chuyên KHTN (HSGS Olympiad)</h3><div class='org'>THPT Chuyên KHTN – ĐHQGHN</div><div class='doclinks'><a href='assets/docs/giay-chung-nhan-tham-du-olympic-chuyen-khtn-hsgs-olympiad.pdf'>📜 Xem chứng nhận (PDF)</a></div></div></div><div class='card award reveal rk-part'><div class='medal'>🏆</div><div class='awbody'><span class='rklab'>Thành tích</span><h3>Danh hiệu “Học sinh 3 Tốt” cấp Trường</h3><div class='org'>Trường ĐH Khoa học Tự nhiên – ĐHQGHN</div></div></div><div class='card award reveal rk-gold'><div class='medal'>🥇</div><div class='awbody'><span class='rklab'>Vàng · Gold</span><h3>Gold Award – International Creative Papers Conference &amp; Olympic (ICPC 2026), Hàn Quốc</h3><div class='org'>Korea University Invention Association · Dự án nhóm “Sign Language Recognition Using Computer Vision” · 16–17/01/2026</div></div><a class='awthumb' href='assets/img/award-gold-award-international-creative-papers-conferenc.jpg'><img src='assets/img/award-gold-award-international-creative-papers-conferenc.jpg' alt='Gold Award – International Creative Papers Conference &amp; Olympic (ICPC 2026), Hàn Quốc' loading='lazy'></a></div><div class='card award reveal rk-gold'><div class='medal'>🥇</div><div class='awbody'><span class='rklab'>Vàng · Gold</span><h3>Gold Award – AI-JAM US 2026 (Thung lũng Silicon)</h3><div class='org'>11th International AI Invention Challenge, AI-JAM US · Dự án cá nhân “SoundGuard – Kính thông minh AI giúp người khiếm thính nhận biết nguy hiểm và định hướng” · 06/09/2026</div><div class='doclinks'><a href='assets/docs/aijam-us-2026-gold-award-soundguard.pdf'>📜 Xem chứng nhận (PDF)</a></div></div><a class='awthumb' href='assets/img/award-gold-award-aijam-us-2026-soundguard.jpg'><img src='assets/img/award-gold-award-aijam-us-2026-soundguard.jpg' alt='Gold Award – AI-JAM US 2026' loading='lazy'></a></div></div></section><div class='twocol'><section id='skills-vi'><h2>Kỹ năng</h2><div class='card reveal'><div class='skillgrid' style='grid-template-columns:1fr'><div class='skill'><span>Python &amp; AI<em>86%</em></span><div class='bar'><i style='width:86%'></i></div></div><div class='skill'><span>IoT &amp; cảm biến<em>85%</em></span><div class='bar'><i style='width:85%'></i></div></div><div class='skill'><span>Viết báo khoa học<em>90%</em></span><div class='bar'><i style='width:90%'></i></div></div><div class='skill'><span>Giảng dạy / trợ giảng<em>85%</em></span><div class='bar'><i style='width:85%'></i></div></div><div class='skill'><span>Tiếng Anh học thuật<em>78%</em></span><div class='bar'><i style='width:78%'></i></div></div><div class='skill'><span>Bóng đá<em>72%</em></span><div class='bar'><i style='width:72%'></i></div></div></div><a href='assets/img/skill-radar.jpg'><img class='certimg' style='max-width:100%;margin-top:20px' src='assets/img/skill-radar.jpg' alt='skill radar' loading='lazy'></a></div></section><section><h2>Sở thích & Quan tâm</h2><div class='card'><div class='chips'><span>AI &amp; IoT</span><span>Đô thị thông minh</span><span>Dạy lập trình</span><span>Bóng đá</span><span>Thiện nguyện</span></div></div><h2 style='margin-top:26px'>Định hướng tương lai</h2><div class='card'><p style='margin-top:0'>Mình muốn theo đuổi ngành Khoa học Máy tính với trọng tâm AI ứng dụng cho đô thị thông minh. Kế hoạch tiếp theo của mình là mở rộng nghiên cứu bãi đỗ xe thông minh thành mô hình thử nghiệm thực tế, đồng thời tiếp tục đồng hành cùng HSGS Code Camp để lan tỏa lập trình tới nhiều bạn học sinh hơn.</p></div></section></div><section id='journey-vi'><h2>Hành trình</h2><div class='card reveal'><div class='tl'><div class='tl-item'><span class='tl-year'>2024</span><p>Từ thiện tại Bệnh viện Hà Đông (lớp 9); trúng tuyển lớp chuyên Tin, THPT Chuyên KHTN (HSGS).</p></div><div class='tl-item'><span class='tl-year'>2025</span><p>Bằng khen Học sinh xuất sắc lớp 10; trợ giảng &amp; tình nguyện viên HSGS Code Camp; nhận chứng nhận chương trình ĐH CUHK Thâm Quyến; danh hiệu “Học sinh 3 Tốt”.</p></div><div class='tl-item'><span class='tl-year'>2026</span><p>Gold Award tại ICPC 2026, Hàn Quốc (01/2026); công bố bài báo quốc tế IJMSM về bãi đỗ xe thông minh với vai trò tác giả chính (05/2026); thiện nguyện BV Xanh Pôn; Gold Award tại AI-JAM US 2026 với dự án cá nhân SoundGuard (09/2026).</p></div></div><a href='assets/img/journey-roadmap.jpg'><img class='certimg' style='max-width:100%;margin-top:14px' src='assets/img/journey-roadmap.jpg' alt='journey roadmap' loading='lazy'></a></div></section></main></div><footer>© 2026 Lâm An Bình · Portfolio học sinh</footer></div><div class='pane-en' lang='en'><div class='sheet'><header><div class='container'><div class='jhead'><span>PORTFOLIO-VN</span><span>Vol. 1 · Student Profile · 2026</span></div><img class='avatar' src='assets/img/avatar.jpg' alt='Lâm An Bình'><h1>Lâm An Bình</h1><div class='school'>HUS High School for Gifted Students · Class 11A2 Informatics</div><div class='tagline'>Informatics-major student · First author of an AI/IoT paper · HSGS Code Camp TA</div><div class='stats'><div class='stat'><b>2026</b><span>International paper (first author)</span></div><div class='stat'><b>Gold</b><span>ICPC 2026 – Korea</span></div><div class='stat'><b>5+</b><span>Volunteer projects</span></div></div></div></header><nav class='topnav'><a href='#about-en'>About</a><a href='#research-en'>Research</a><a href='#activities-en'>Activities</a><a href='#awards-en'>Awards</a><a href='#skills-en'>Skills</a><a href='#journey-en'>Journey</a></nav><main class='container'><section id='about-en'><h2>About Me</h2><div class='card'><p style='margin-top:0'>I am Lam An Binh, a grade-11 Informatics-major student at HUS High School for Gifted Students (HSGS), VNU Hanoi. I am interested in AI, IoT and technology for urban problems: in 2026 I was the first author of an international paper on AI/IoT intelligent car-parking systems for Hanoi, and my team won the Gold Award at ICPC 2026 in Korea. I built “Vocab Catalyst”, a Gemini-AI-powered IELTS/SAT vocabulary app, serve as a teaching assistant and volunteer at HSGS Code Camp, hold the university-level “Three Good Student” title and take part in many charity projects.</p><blockquote class='quote'>“Smart cities start with very ordinary problems — like finding a parking spot.”</blockquote></div></section><section id='research-en'><h2>Research</h2><div class='card research reveal'><span class='badge'>First author</span><h3>Applications of AI and IoT to Develop Intelligent Car Parking Systems in Hanoi, Vietnam</h3><div class='org'>International Journal of Multidisciplinary on Science and Management (IJMSM), Vol 3, Issue 2 (2026), pp. 163–168</div><div class='doi'>DOI: 10.71141/30485037/V3I2P119</div><p>The paper proposes an Intelligent Parking System (IPS) for Hanoi — where parking supply meets only 8–10% of demand — using ultrasonic/geomagnetic sensors combined with OpenCV computer vision for automatic license-plate recognition, real-time occupancy updates and mobile-app reservations.</p><div class='doclinks'><a href='assets/docs/applications-of-ai-and-iot-to-develop-intelligent-car-parkin.pdf'>📄 Full paper (PDF)</a></div><div class='gallery'><a href='assets/img/research-0.jpg'><img src='assets/img/research-0.jpg' alt='research figure' loading='lazy'></a><a href='assets/img/research-1.jpg'><img src='assets/img/research-1.jpg' alt='research figure' loading='lazy'></a><a href='assets/img/research-2.jpg'><img src='assets/img/research-2.jpg' alt='research figure' loading='lazy'></a><a href='assets/img/research-3.jpg'><img src='assets/img/research-3.jpg' alt='research figure' loading='lazy'></a></div></div></section><section id='activities-en'><h2>Extracurriculars & Projects</h2><div class='actwrap'><div class='card reveal'><h3>Personal project: Vocab Catalyst — AI-powered IELTS/SAT vocabulary coach</h3><p>A self-built desktop application for IELTS/SAT vocabulary training: AI-generated exercises, instant mistake explanations, a mistake bank for targeted relearning and a personalized study roadmap — turning vocabulary practice into a guided, measurable journey.</p><ul class='pts'><li>Python desktop app with a CustomTkinter interface and 4 tabs: Practice · Mistake Bank · Calendar · Reminders; data stored locally in SQLite.</li><li>Generates practice sets by exam (SAT/IELTS), topic and exercise type; wrong answers get instant Gemini AI explanations and are stored in the Mistake Bank to seed relearning exercises.</li><li>The AI builds a 7-day study roadmap from recent performance; the calendar tab tracks daily tasks and reminders fire at the chosen time.</li><li>Clean four-layer architecture: CustomTkinter UI → CatalystApp orchestration (threading, adaptive logic) → GeminiService + db.py service layer → Google Gemini API and the SQLite database.</li></ul><div class='doclinks'><a href='assets/docs/bao-cao-ky-thuat-vocab-catalyst-30-trang-pdf.pdf'>📜 Vocab Catalyst technical report – 30 pages (PDF)</a></div><div class='gallery'><a href='assets/img/act0-0.jpg'><img src='assets/img/act0-0.jpg' alt='Personal project: Vocab Catalyst — AI-powered IELTS/SAT vocabulary coach' loading='lazy'></a><a href='assets/img/act0-1.jpg'><img src='assets/img/act0-1.jpg' alt='Personal project: Vocab Catalyst — AI-powered IELTS/SAT vocabulary coach' loading='lazy'></a><a href='assets/img/act0-2.jpg'><img src='assets/img/act0-2.jpg' alt='Personal project: Vocab Catalyst — AI-powered IELTS/SAT vocabulary coach' loading='lazy'></a><a href='assets/img/act0-3.jpg'><img src='assets/img/act0-3.jpg' alt='Personal project: Vocab Catalyst — AI-powered IELTS/SAT vocabulary coach' loading='lazy'></a><a href='assets/img/act0-4.jpg'><img src='assets/img/act0-4.jpg' alt='Personal project: Vocab Catalyst — AI-powered IELTS/SAT vocabulary coach' loading='lazy'></a><a href='assets/img/act0-5.jpg'><img src='assets/img/act0-5.jpg' alt='Personal project: Vocab Catalyst — AI-powered IELTS/SAT vocabulary coach' loading='lazy'></a><a href='assets/img/act0-6.jpg'><img src='assets/img/act0-6.jpg' alt='Personal project: Vocab Catalyst — AI-powered IELTS/SAT vocabulary coach' loading='lazy'></a></div></div><div class='card reveal'><h3>Personal project: EDU-Bot AI — interactive exam-prep companion</h3><p>A concept combining AI, IoT and Robotics: an interactive companion that optimizes intensive English exam practice (IELTS/SAT) through natural conversation and real-time intelligent feedback.</p><ul class='pts'><li>Personalized experience: automatically adjusts the roadmap and difficulty to the learner&#x27;s actual level.</li><li>Speaking-reflex optimization: a 100%-English interaction environment that removes the psychological barrier to speaking.</li><li>Digitized outcomes: detailed progress tracking through visual data dashboards.</li></ul><div class='gallery'><a href='assets/img/act1-0.jpg'><img src='assets/img/act1-0.jpg' alt='Personal project: EDU-Bot AI — interactive exam-prep companion' loading='lazy'></a></div></div><div class='card reveal'><h3>Teaching Assistant, Volunteer &amp; Manager – HSGS Code Camp</h3><p>Teaching assistant, volunteer and Manager at HSGS Code Camp sessions organized by VNU University of Science — including the Archimedes Code Camp 2026 session — helping teach programming to students.</p><div class='doclinks'><a href='assets/docs/chung-nhan-tro-giang-hsgs-code-camp.pdf'>📜 TA Certificate – HSGS Code Camp</a><a href='assets/docs/chung-nhan-tinh-nguyen-vien-hsgs-code-camp.pdf'>📜 Volunteer Certificate – HSGS Code Camp</a><a href='assets/docs/chung-nhan-manager-archimedes-code-camp.pdf'>📜 Manager Certificate – Archimedes Code Camp</a></div></div><div class='card reveal'><h3>Experience program at CUHK Shenzhen</h3><p>Participated in and received a certificate from a program of The Chinese University of Hong Kong, Shenzhen.</p><div class='doclinks'><a href='assets/docs/chung-nhan-h-cuhk-tham-quyen.pdf'>📜 CUHK Shenzhen Certificate</a></div></div><div class='card reveal'><h3>Volunteering at Saint Paul General Hospital (2026)</h3><p>Gave gifts and encouragement to disadvantaged young patients at Saint Paul General Hospital; received the hospital&#x27;s thank-you letter.</p><div class='doclinks'><a href='assets/docs/thu-cam-on-cua-bv-a-khoa-xanh-pon.pdf'>📜 Thank-you letter from Saint Paul Hospital</a></div><div class='gallery'><a href='assets/img/act4-0.jpg'><img src='assets/img/act4-0.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a><a href='assets/img/act4-1.jpg'><img src='assets/img/act4-1.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a><a href='assets/img/act4-2.jpg'><img src='assets/img/act4-2.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a><a href='assets/img/act4-3.jpg'><img src='assets/img/act4-3.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a><a href='assets/img/act4-4.jpg'><img src='assets/img/act4-4.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a><a href='assets/img/act4-5.jpg'><img src='assets/img/act4-5.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a><a href='assets/img/act4-6.jpg'><img src='assets/img/act4-6.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a><a href='assets/img/act4-7.jpg'><img src='assets/img/act4-7.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a><a href='assets/img/act4-8.jpg'><img src='assets/img/act4-8.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a><a href='assets/img/act4-9.jpg'><img src='assets/img/act4-9.jpg' alt='Volunteering at Saint Paul General Hospital (2026)' loading='lazy'></a></div></div><div class='card reveal'><h3>Other charity projects</h3><p>Project supporting young patients at Ha Dong General Hospital · Relief project for flood victims in Yen Bai · “Busy Bees” school-building group in Nghe An · Charity at Ha Dong Hospital (grade 9) · Member of the HUS school football team.</p><div class='doclinks'><a href='assets/docs/da-benh-nhan-nhi-bv-ha-ong.pdf'>📜 Ha Dong Hospital children project</a><a href='assets/docs/da-chia-se-ong-bao-lu-yen-bai.pdf'>📜 Yen Bai flood-relief project</a><a href='assets/docs/nhom-ong-cham-xay-truong-nghe-an.pdf'>📜 School-building group in Nghe An</a><a href='assets/docs/gcn-tu-thien-bv-ha-ong-lop-9.pdf'>📜 Ha Dong Hospital charity certificate (grade 9)</a><a href='assets/docs/hoc-sinh-3-tot-cap-truong.pdf'>📜 “Three Good Student” certificate</a></div></div><div class='card reveal'><h3>Tuyên Quang Excursion 2026</h3><p>An extracurricular excursion to Tuyên Quang with students from many schools: hall seminars, exchange sessions and team-building activities.</p><div class='gallery'><a href='assets/img/act6-0.jpg'><img src='assets/img/act6-0.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-1.jpg'><img src='assets/img/act6-1.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-2.jpg'><img src='assets/img/act6-2.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-3.jpg'><img src='assets/img/act6-3.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-4.jpg'><img src='assets/img/act6-4.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-5.jpg'><img src='assets/img/act6-5.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-6.jpg'><img src='assets/img/act6-6.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-7.jpg'><img src='assets/img/act6-7.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-8.jpg'><img src='assets/img/act6-8.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-9.jpg'><img src='assets/img/act6-9.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a><a href='assets/img/act6-10.jpg'><img src='assets/img/act6-10.jpg' alt='Tuyên Quang Excursion 2026' loading='lazy'></a></div></div></div></section><section id='awards-en'><h2>Honors & Awards</h2><div class='awgrid'><div class='card award reveal rk-part'><div class='medal'>🏆</div><div class='awbody'><span class='rklab'>Achievement</span><h3>Certificate of Merit – Outstanding Student, Grade 10</h3><div class='doclinks'><a href='assets/docs/bang-khen-hoc-sinh-xuat-sac-lop-10.pdf'>📜 View certificate (PDF)</a></div></div></div><div class='card award reveal rk-part'><div class='medal'>🏆</div><div class='awbody'><span class='rklab'>Achievement</span><h3>Certificate of Participation – HSGS Olympiad</h3><div class='org'>HSGS – VNU Hanoi</div><div class='doclinks'><a href='assets/docs/giay-chung-nhan-tham-du-olympic-chuyen-khtn-hsgs-olympiad.pdf'>📜 View certificate (PDF)</a></div></div></div><div class='card award reveal rk-part'><div class='medal'>🏆</div><div class='awbody'><span class='rklab'>Achievement</span><h3>“Three Good Student” title – University level</h3><div class='org'>VNU University of Science</div></div></div><div class='card award reveal rk-gold'><div class='medal'>🥇</div><div class='awbody'><span class='rklab'>Gold</span><h3>Gold Award – International Creative Papers Conference &amp; Olympic (ICPC 2026), Korea</h3><div class='org'>Korea University Invention Association · Team project “Sign Language Recognition Using Computer Vision” · Jan 16–17, 2026</div></div><a class='awthumb' href='assets/img/award-gold-award-international-creative-papers-conferenc.jpg'><img src='assets/img/award-gold-award-international-creative-papers-conferenc.jpg' alt='Gold Award – International Creative Papers Conference &amp; Olympic (ICPC 2026), Korea' loading='lazy'></a></div><div class='card award reveal rk-gold'><div class='medal'>🥇</div><div class='awbody'><span class='rklab'>Gold</span><h3>Gold Award – AI-JAM US 2026 (Silicon Valley)</h3><div class='org'>11th International AI Invention Challenge, AI-JAM US · Personal project “SoundGuard – AI Smart Glasses That Let Deaf People See Danger and Feel Direction” · Sep 6, 2026</div><div class='doclinks'><a href='assets/docs/aijam-us-2026-gold-award-soundguard.pdf'>📜 View certificate (PDF)</a></div></div><a class='awthumb' href='assets/img/award-gold-award-aijam-us-2026-soundguard.jpg'><img src='assets/img/award-gold-award-aijam-us-2026-soundguard.jpg' alt='Gold Award – AI-JAM US 2026' loading='lazy'></a></div></div></section><div class='twocol'><section id='skills-en'><h2>Skills</h2><div class='card reveal'><div class='skillgrid' style='grid-template-columns:1fr'><div class='skill'><span>Python &amp; AI<em>86%</em></span><div class='bar'><i style='width:86%'></i></div></div><div class='skill'><span>IoT &amp; sensors<em>85%</em></span><div class='bar'><i style='width:85%'></i></div></div><div class='skill'><span>Scientific writing<em>90%</em></span><div class='bar'><i style='width:90%'></i></div></div><div class='skill'><span>Teaching / TA<em>85%</em></span><div class='bar'><i style='width:85%'></i></div></div><div class='skill'><span>Academic English<em>78%</em></span><div class='bar'><i style='width:78%'></i></div></div><div class='skill'><span>Football<em>72%</em></span><div class='bar'><i style='width:72%'></i></div></div></div><a href='assets/img/skill-radar.jpg'><img class='certimg' style='max-width:100%;margin-top:20px' src='assets/img/skill-radar.jpg' alt='skill radar' loading='lazy'></a></div></section><section><h2>Interests</h2><div class='card'><div class='chips'><span>AI &amp; IoT</span><span>Smart cities</span><span>Teaching programming</span><span>Football</span><span>Volunteering</span></div></div><h2 style='margin-top:26px'>Future Goals</h2><div class='card'><p style='margin-top:0'>I want to pursue Computer Science with a focus on applied AI for smart cities. My next plan is to extend the intelligent-parking research into a real pilot model, while continuing with HSGS Code Camp to bring programming to more students.</p></div></section></div><section id='journey-en'><h2>Journey</h2><div class='card reveal'><div class='tl'><div class='tl-item'><span class='tl-year'>2024</span><p>Charity work at Ha Dong Hospital (grade 9); admitted to the Informatics-major class at HSGS.</p></div><div class='tl-item'><span class='tl-year'>2025</span><p>Certificate of Merit as an outstanding grade-10 student; TA &amp; volunteer at HSGS Code Camp; certificate from a CUHK-Shenzhen program; “Three Good Student” title.</p></div><div class='tl-item'><span class='tl-year'>2026</span><p>Gold Award at ICPC 2026 in Korea (Jan 2026); published an international IJMSM paper on intelligent parking as first author (May 2026); volunteered at Saint Paul Hospital; Gold Award at AI-JAM US 2026 for the personal project SoundGuard (Sep 2026).</p></div></div><a href='assets/img/journey-roadmap.jpg'><img class='certimg' style='max-width:100%;margin-top:14px' src='assets/img/journey-roadmap.jpg' alt='journey roadmap' loading='lazy'></a></div></section></main></div><footer>© 2026 Lâm An Bình · Student Portfolio</footer></div><script>function setLang(l,save){document.body.classList.toggle('lang-en',l==='en');document.documentElement.lang=l;if(save){try{localStorage.setItem('plang',l)}catch(e){}}document.querySelectorAll('.lbtn').forEach(function(b){b.classList.toggle('active',b.dataset.l===l)});}document.querySelectorAll('.lbtn').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l,true)})});var saved='en';try{saved=localStorage.getItem('plang')||'en'}catch(e){}setLang(saved,false);var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});var lb=document.createElement('div');lb.className='lb';lb.innerHTML='<img>';document.body.appendChild(lb);lb.addEventListener('click',function(){lb.classList.remove('open')});document.querySelectorAll('.gallery a,.awthumb').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();lb.querySelector('img').src=a.getAttribute('href');lb.classList.add('open')})});</script></body></html>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --accent: #06b6d4;
+      --accent-gradient: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+      --gold-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-sub: #64748b;
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 14px 34px rgba(15, 23, 42, 0.09);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--primary); text-decoration: none; transition: all 0.2s ease; }
+    a:hover { color: var(--primary-dark); }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Floating Language Switcher */
+    .lang-switcher-wrap {
+      position: fixed;
+      top: 18px;
+      right: 20px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      gap: 4px;
+    }
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .lang-btn.active {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+    }
+
+    /* Bilingual Pane visibility */
+    .pane-en { display: none; }
+    body.lang-en .pane-en { display: block; }
+    body.lang-en .pane-vi { display: none; }
+
+    /* Sticky Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      letter-spacing: 0.5px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 40px;
+      background: linear-gradient(180deg, #f0f7ff 0%, #f8fafc 100%);
+      border-bottom: 1px solid var(--card-border);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      top: -150px;
+      right: -100px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .school-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #ffffff;
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+    }
+    .school-tag i { color: #f59e0b; }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.85rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+    .hero-gradient-text {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+    .stat-card {
+      background: #ffffff;
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: #cbd5e1;
+    }
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .stat-icon.gold {
+      background: #fef3c7;
+      color: #d97706;
+    }
+    .stat-info b {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .stat-info span {
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
+
+    /* Hero Student Photo Box */
+    .hero-photo-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .photo-frame {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid #ffffff;
+      background: #ffffff;
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.4s ease;
+    }
+    .photo-frame:hover img {
+      transform: scale(1.03);
+    }
+    .photo-badge {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .photo-badge-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .photo-badge-sub {
+      font-size: 0.76rem;
+      color: #cbd5e1;
+    }
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+      margin-right: 6px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 70px 0;
+    }
+    .section-header {
+      margin-bottom: 36px;
+      text-align: left;
+    }
+    .section-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title i {
+      color: var(--primary);
+      font-size: 1.6rem;
+    }
+    .section-desc {
+      color: var(--text-sub);
+      font-size: 1rem;
+      margin-top: 6px;
+    }
+
+    /* Common Card Styles */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: #cbd5e1;
+    }
+
+    /* About Section */
+    .about-box {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .about-story {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .about-quote {
+      margin: 20px 0;
+      padding: 20px 24px;
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .about-quote i {
+      font-size: 1.6rem;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 14px;
+    }
+    .pillar-item {
+      background: #f8fafc;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: left;
+    }
+    .pillar-item i {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .pillar-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .pillar-item p {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    /* Research Section */
+    .research-card {
+      border-left: 5px solid var(--primary);
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    }
+    .author-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .research-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+    .research-journal {
+      font-size: 0.92rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .research-doi {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      font-family: monospace;
+      margin-bottom: 16px;
+    }
+    .research-abstract {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      text-align: justify;
+      margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+    }
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--text-main) !important;
+      border-color: var(--card-border);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-secondary:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+    }
+    .btn-accent {
+      background: #0284c7;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+    }
+    .btn-accent:hover {
+      background: #0369a1;
+      transform: translateY(-2px);
+    }
+
+    /* SPCN Video Showcase Banner */
+    .spcn-hero-box {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .spcn-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .spcn-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(6, 182, 212, 0.2);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      color: #38bdf8;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .spcn-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+    }
+    .spcn-sub {
+      color: #94a3b8;
+      font-size: 1rem;
+      margin-top: 6px;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 22px;
+      background: #000000;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .spcn-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .feat-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+    .feat-card h5 {
+      color: #38bdf8;
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feat-card p {
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 10px 0 8px;
+    }
+    .project-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    /* Image Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .gallery-item {
+      display: block;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      position: relative;
+      cursor: zoom-in;
+      background: #f1f5f9;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+    .gallery-item::after {
+      content: '\f00e';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      font-size: 1.1rem;
+    }
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    /* Awards Grid */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+    }
+    .award-card {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      border-left: 5px solid var(--primary);
+    }
+    .award-card.gold {
+      border-left-color: #f59e0b;
+      background: linear-gradient(135deg, #ffffff 0%, #fffdf7 100%);
+    }
+    .award-medal {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+    .award-card.gold .award-medal {
+      background: #fef3c7;
+      color: #d97706;
+    }
+    .award-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .award-rank {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .award-card.gold .award-rank {
+      color: #d97706;
+    }
+    .award-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .award-org {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+    .award-thumb {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--card-border);
+      cursor: zoom-in;
+    }
+    .award-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .award-thumb:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Skills Grid - Modern Categories WITHOUT % and WITHOUT radar chart */
+    .skills-category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+    .skill-cat-card {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+    .skill-cat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #cbd5e1;
+    }
+    .cat-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .cat-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .cat-head h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+    .skill-tag:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: #bfdbfe;
+    }
+    .skill-tag i {
+      font-size: 0.8rem;
+      color: var(--primary);
+    }
+
+    /* Activities Section */
+    .activity-card {
+      margin-bottom: 24px;
+    }
+    .activity-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+    .activity-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Journey Timeline - NO roadmap image */
+    .timeline {
+      position: relative;
+      padding-left: 36px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 10px;
+      bottom: 20px;
+      width: 3px;
+      background: linear-gradient(180deg, var(--primary) 0%, #06b6d4 100%);
+      border-radius: 99px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 34px;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -36px;
+      top: 4px;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+    }
+    .timeline-year {
+      display: inline-block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .timeline-content {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .timeline-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .timeline-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      background: #f1f5f9;
+      color: var(--text-sub);
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 24px;
+      cursor: zoom-out;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 92vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox-content img {
+      max-width: 90vw;
+      max-height: 82vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      object-fit: contain;
+    }
+    .lightbox-caption {
+      color: #cbd5e1;
+      font-size: 0.92rem;
+      margin-top: 14px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      color: #ffffff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--card-border);
+      padding: 40px 0;
+      margin-top: 60px;
+      text-align: center;
+      color: var(--text-sub);
+      font-size: 0.9rem;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .footer-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-photo-wrap { order: -1; }
+      .photo-frame { max-width: 360px; }
+      .pillar-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .nav-links { display: none; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .awards-grid { grid-template-columns: 1fr; }
+      .spcn-title { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Language Switcher -->
+  <div class="lang-switcher-wrap">
+    <button class="lang-btn active" data-lang="vi">Tiếng Việt</button>
+    <button class="lang-btn" data-lang="en">English</button>
+  </div>
+
+  <!-- VIETNAMESE CONTENT PANE -->
+  <div class="pane-vi" lang="vi">
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
+          <span>Lâm An Bình</span>
+          <span class="brand-badge">HSGS · 11A2 Tin</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about-vi">Giới thiệu</a></li>
+          <li><a href="#research-vi">Nghiên cứu</a></li>
+          <li><a href="#spcn-vi">Sản phẩm cá nhân</a></li>
+          <li><a href="#awards-vi">Thành tích</a></li>
+          <li><a href="#skills-vi">Kỹ năng</a></li>
+          <li><a href="#activities-vi">Hoạt động</a></li>
+          <li><a href="#journey-vi">Hành trình</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="school-tag">
+            <i class="fa-solid fa-award"></i>
+            <span>THPT Chuyên Khoa học Tự nhiên (HSGS) · ĐHQGHN</span>
+          </div>
+          <h1>Xin chào, mình là <br><span class="hero-gradient-text">Lâm An Bình</span></h1>
+          <p class="hero-lead">Học sinh Lớp 11A2 Chuyên Tin với niềm đam mê ứng dụng Trí tuệ nhân tạo (AI), IoT và Khoa học máy tính để giải quyết các bài toán đời sống đô thị và cống hiến cho cộng đồng.</p>
+          
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-icon gold"><i class="fa-solid fa-trophy"></i></div>
+              <div class="stat-info">
+                <b>2 Giải Vàng Quốc Tế</b>
+                <span>ICPC 2026 Hàn Quốc & AI-JAM US 2026</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-file-lines"></i></div>
+              <div class="stat-info">
+                <b>Tác giả chính (First Author)</b>
+                <span>Bài báo Quốc tế AI/IoT (IJMSM 2026)</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div class="stat-info">
+                <b>Phần mềm AI Vocab Catalyst</b>
+                <span>Sản phẩm cá nhân hỗ trợ IELTS/SAT</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+              <div class="stat-info">
+                <b>Trợ giảng Code Camp & 5+ Dự án</b>
+                <span>Thiện nguyện & Học sinh 3 Tốt cấp trường</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <a href="#spcn-vi" class="btn btn-primary"><i class="fa-solid fa-play"></i> Xem Sản Phẩm Cá Nhân</a>
+            <a href="#research-vi" class="btn btn-secondary"><i class="fa-solid fa-book-open"></i> Đọc Bài Báo Khoa Học</a>
+            <a href="#awards-vi" class="btn btn-secondary"><i class="fa-solid fa-medal"></i> Xem Bằng Khen</a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="photo-frame">
+            <img src="assets/img/an-binh-typing.jpg" alt="Lâm An Bình đang lập trình trên máy tính">
+            <div class="photo-badge">
+              <div>
+                <div class="photo-badge-name"><span class="status-dot"></span>Lâm An Bình</div>
+                <div class="photo-badge-sub">Chuyên Tin HSGS · Developer & Researcher</div>
+              </div>
+              <i class="fa-solid fa-code" style="color: #38bdf8; font-size: 1.2rem;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- About Section -->
+      <section id="about-vi">
+        <div class="section-header">
+          <span class="section-badge">TỔNG QUAN HỒ SƠ</span>
+          <h2 class="section-title"><i class="fa-solid fa-user-astronaut"></i> Giới thiệu bản thân</h2>
+          <p class="section-desc">Hành trình từ sự tò mò công nghệ đến những công trình thực tiễn vì cộng đồng</p>
+        </div>
+
+        <div class="card about-box">
+          <div class="about-story">
+            <p>Mình là <strong>Lâm An Bình</strong>, hiện là học sinh Lớp 11 chuyên Tin tại Trường THPT Chuyên Khoa học Tự nhiên (HSGS), Đại học Quốc gia Hà Nội. Từ những ngày đầu làm quen với dòng lệnh và vi điều khiển, mình luôn tin rằng công nghệ chỉ thực sự có ý nghĩa khi nó bước ra khỏi màn hình để giải quyết những thách thức thực tế của cuộc sống.</p>
+            <p style="margin-top: 12px;">Năm 2026, mình vinh dự là tác giả chính của bài báo khoa học quốc tế về hệ thống đỗ xe thông minh ứng dụng AI và IoT cho đô thị Hà Nội đăng trên tạp chí IJMSM; đồng thời giành Huy chương Vàng tại cuộc thi ICPC 2026 tại Hàn Quốc với dự án nhận diện ngôn ngữ ký hiệu và Huy chương Vàng AI-JAM US 2026 tại Thung lũng Silicon với dự án kính thông minh SoundGuard cho người khiếm thính. Bên cạnh nghiên cứu, mình còn phát triển phần mềm luyện từ vựng IELTS/SAT Vocab Catalyst bằng AI, tham gia quản lý và trợ giảng tại HSGS Code Camp để truyền lửa lập trình cho các em học sinh, và tích cực tham gia các dự án thiện nguyện vì trẻ em và đồng bào khó khăn.</p>
+          </div>
+
+          <div class="about-quote">
+            <i class="fa-solid fa-quote-left"></i>
+            <span>“Thành phố thông minh không bắt đầu từ những điều xa vời, mà bắt đầu từ việc giải quyết trọn vẹn những bài toán rất đời thường — như tìm được một chỗ đỗ xe thuận tiện hay giúp người khiếm thính cảm nhận được sự an toàn.”</span>
+          </div>
+
+          <div class="pillar-grid">
+            <div class="pillar-item">
+              <i class="fa-solid fa-microchip"></i>
+              <h4>AI & IoT Ứng Dụng</h4>
+              <p>Tập trung vào giải pháp thị giác máy tính (OpenCV), mô hình AI tạo sinh (Gemini API) và cảm biến nhúng thời gian thực.</p>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <h4>Lan Tỏa Tri Thức</h4>
+              <p>Quản lý khóa học, làm trợ giảng tại HSGS Code Camp, hỗ trợ hàng trăm học sinh THCS và THPT tiếp cận lập trình.</p>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <h4>Trách Nhiệm Xã Hội</h4>
+              <p>Tích cực tham gia hoạt động thiện nguyện tại BV Xanh Pôn, BV Hà Đông, hỗ trợ đồng bào bão lũ và xây trường học vùng cao.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Section -->
+      <section id="research-vi">
+        <div class="section-header">
+          <span class="section-badge">CÔNG BỐ QUỐC TẾ</span>
+          <h2 class="section-title"><i class="fa-solid fa-newspaper"></i> Nghiên cứu khoa học</h2>
+          <p class="section-desc">Nghiên cứu ứng dụng công nghệ giải quyết bài toán giao thông và đỗ xe tại đô thị lớn</p>
+        </div>
+
+        <div class="card research-card">
+          <span class="author-badge"><i class="fa-solid fa-star"></i> Tác giả chính (First Author)</span>
+          <h3 class="research-title">Applications of AI and IoT to Develop Intelligent Car Parking Systems in Hanoi, Vietnam</h3>
+          <div class="research-journal">International Journal of Multidisciplinary on Science and Management (IJMSM), Vol 3, Issue 2 (2026), pp. 163–168</div>
+          <div class="research-doi">DOI: 10.71141/30485037/V3I2P119</div>
+          
+          <p class="research-abstract">
+            Nghiên cứu xuất phát từ thực trạng hạ tầng đỗ xe tại thủ đô Hà Nội hiện chỉ đáp ứng được khoảng 8–10% nhu cầu thực tế của các phương tiện cá nhân, gây ùn tắc giao thông và lãng phí thời gian. Nghiên cứu đề xuất mô hình Hệ thống đỗ xe thông minh (Intelligent Parking System - IPS) toàn diện: tích hợp mạng lưới cảm biến siêu âm và cảm biến địa từ phát hiện trạng thái vị trí đỗ, kết hợp thuật toán thị giác máy tính OpenCV để nhận diện biển số xe tự động (ALPR), đồng bộ dữ liệu thời gian thực lên nền tảng đám mây và kết nối ứng dụng di động cho phép người dân tìm kiếm, định vị và đặt chỗ trước.
+          </p>
+
+          <div class="btn-group">
+            <a href="assets/docs/applications-of-ai-and-iot-to-develop-intelligent-car-parkin.pdf" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-file-pdf"></i> Đọc toàn văn bài báo (PDF)
+            </a>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <h5 style="font-size: 0.9rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">Sơ đồ hệ thống & Hình ảnh minh họa trong bài báo:</h5>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="assets/img/research-0.jpg" data-caption="Hình 1: Kiến trúc tổng thể hệ thống đỗ xe thông minh (IPS)">
+                <img src="assets/img/research-0.jpg" alt="IPS Architecture" loading="lazy">
+              </a>
+              <a class="gallery-item" href="assets/img/research-1.jpg" data-caption="Hình 2: Sơ đồ thuật toán xử lý dữ liệu cảm biến và luồng điều khiển">
+                <img src="assets/img/research-1.jpg" alt="Flowchart" loading="lazy">
+              </a>
+              <a class="gallery-item" href="assets/img/research-2.jpg" data-caption="Hình 3: Kết quả thực nghiệm thị giác máy tính nhận diện biển số xe (OpenCV)">
+                <img src="assets/img/research-2.jpg" alt="OpenCV License Plate" loading="lazy">
+              </a>
+              <a class="gallery-item" href="assets/img/research-3.jpg" data-caption="Hình 4: Giao diện ứng dụng di động và bảng dữ liệu thời gian thực">
+                <img src="assets/img/research-3.jpg" alt="Mobile UI" loading="lazy">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPCN & Tech Projects Section -->
+      <section id="spcn-vi">
+        <div class="section-header">
+          <span class="section-badge">SẢN PHẨM CÁ NHÂN (SPCN) & DỰ ÁN</span>
+          <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Sản phẩm cá nhân & Dự án công nghệ</h2>
+          <p class="section-desc">Các sản phẩm phần mềm và sáng chế công nghệ do Lâm An Bình trực tiếp nghiên cứu & phát triển</p>
+        </div>
+
+        <!-- SPCN Highlight Box with Video Embed -->
+        <div class="spcn-hero-box">
+          <div class="spcn-header">
+            <div>
+              <span class="spcn-badge"><i class="fa-solid fa-bolt"></i> SẢN PHẨM CÁ NHÂN TIÊU BIỂU (SPCN)</span>
+              <h3 class="spcn-title">Vocab Catalyst – Phần mềm luyện từ vựng IELTS/SAT bằng AI</h3>
+              <p class="spcn-sub">Giải pháp học từ vựng tiếng Anh học thuật thông minh: Tự sinh đề bằng Google Gemini AI, giải thích lỗi sai tức thì, xây dựng Mistake Bank và tự động cá nhân hóa lộ trình 7 ngày.</p>
+            </div>
+          </div>
+
+          <!-- Video Wrapper -->
+          <div class="video-wrapper">
+            <iframe src="https://drive.google.com/file/d/1SVd2l7Zusj6xLzHcin8Yav7s2VwqMTip/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+
+          <div class="btn-group">
+            <a href="https://drive.google.com/file/d/1SVd2l7Zusj6xLzHcin8Yav7s2VwqMTip/view?usp=drive_link" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-video"></i> Mở Video Demo SPCN (Google Drive)
+            </a>
+            <a href="https://drive.google.com/drive/u/0/folders/1cNreUlTConvMPP2OhdJgLRnC3GO--VDk" target="_blank" class="btn btn-accent">
+              <i class="fa-solid fa-folder-open"></i> Thư mục tài liệu SPCN (Google Drive)
+            </a>
+            <a href="assets/docs/bao-cao-ky-thuat-vocab-catalyst-30-trang-pdf.pdf" target="_blank" class="btn btn-secondary">
+              <i class="fa-solid fa-file-pdf"></i> Báo cáo kỹ thuật 30 trang (PDF)
+            </a>
+          </div>
+
+          <div class="spcn-features">
+            <div class="feat-card">
+              <h5><i class="fa-solid fa-wand-magic-sparkles"></i> AI Sinh Đề & Thích Ứng</h5>
+              <p>Tích hợp Google Gemini API để sinh bộ bài tập ngữ cảnh phong phú theo chuẩn SAT/IELTS, phù hợp với năng lực hiện tại của người học.</p>
+            </div>
+            <div class="feat-card">
+              <h5><i class="fa-solid fa-database"></i> Ngân Hàng Lỗi Sai (Mistake Bank)</h5>
+              <p>Tự động ghi nhận câu làm sai, giải thích căn nguyên lỗi ngữ nghĩa/ngữ pháp và tự động lập bài kiểm tra tái luyện tập định kỳ.</p>
+            </div>
+            <div class="feat-card">
+              <h5><i class="fa-solid fa-calendar-check"></i> Lộ Trình 7 Ngày Cá Nhân Hóa</h5>
+              <p>Thuật toán tự động phân bổ mục tiêu học tập hàng ngày, tích hợp lịch theo dõi tiến độ và hệ thống nhắc nhở thông minh.</p>
+            </div>
+            <div class="feat-card">
+              <h5><i class="fa-solid fa-layer-group"></i> Kiến Trúc 4 Lớp Độc Lập</h5>
+              <p>Giao diện CustomTkinter hiện đại → Bộ điều phối CatalystApp (đa luồng) → Service Layer (Gemini & db.py) → Cơ sở dữ liệu SQLite cục bộ.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 18px;">
+            <h5 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">Ảnh chụp màn hình các tính năng trong phần mềm:</h5>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="assets/img/act0-0.jpg" data-caption="Giao diện chính và trung tâm luyện tập của Vocab Catalyst"><img src="assets/img/act0-0.jpg" alt="Vocab Catalyst 1" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-1.jpg" data-caption="Giao diện làm bài tập trắc nghiệm từ vựng IELTS/SAT"><img src="assets/img/act0-1.jpg" alt="Vocab Catalyst 2" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-2.jpg" data-caption="Tính năng AI giải thích chi tiết lỗi sai khi người học chọn đáp án"><img src="assets/img/act0-2.jpg" alt="Vocab Catalyst 3" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-3.jpg" data-caption="Ngân hàng lỗi sai (Mistake Bank) tự động lưu trữ và phân loại từ vựng"><img src="assets/img/act0-3.jpg" alt="Vocab Catalyst 4" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-4.jpg" data-caption="Tab lịch học và theo dõi chuỗi ngày học tập (Daily Streak)"><img src="assets/img/act0-4.jpg" alt="Vocab Catalyst 5" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-5.jpg" data-caption="Hệ thống thông báo nhắc nhở và thiết lập mục tiêu cá nhân"><img src="assets/img/act0-5.jpg" alt="Vocab Catalyst 6" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-6.jpg" data-caption="Tổng quan tiến độ và thống kê hiệu quả học tập trên Vocab Catalyst"><img src="assets/img/act0-6.jpg" alt="Vocab Catalyst 7" loading="lazy"></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Projects Grid -->
+        <div class="projects-grid">
+          <div class="card project-card">
+            <div>
+              <span class="school-tag" style="margin-bottom: 8px; font-size: 0.78rem;"><i class="fa-solid fa-trophy" style="color: #f59e0b;"></i> Giải Vàng AI-JAM US 2026 (Silicon Valley)</span>
+              <h3>SoundGuard – Kính thông minh AI hỗ trợ người khiếm thính</h3>
+              <p>Dự án cá nhân sáng chế thiết bị đeo hỗ trợ người khiếm thính nhận biết các tình huống nguy hiểm trong môi trường đô thị: Phân tích âm thanh xung quanh (còi xe cấp cứu, tiếng va chạm, tiếng hét) qua AI và chuyển đổi thành tín hiệu rung xúc giác kèm chỉ báo hướng trực quan trên mắt kính.</p>
+            </div>
+            <div class="btn-group">
+              <a href="assets/docs/aijam-us-2026-gold-award-soundguard.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-certificate"></i> Bằng khen AI-JAM (PDF)</a>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div>
+              <span class="school-tag" style="margin-bottom: 8px; font-size: 0.78rem;"><i class="fa-solid fa-trophy" style="color: #f59e0b;"></i> Giải Vàng ICPC 2026 (Hàn Quốc)</span>
+              <h3>Sign Language Recognition Using Computer Vision</h3>
+              <p>Dự án nhóm ứng dụng thị giác máy tính và học sâu để nhận diện cử chỉ bàn tay của người câm điếc trong thời gian thực, tự động dịch thành chữ viết và giọng nói phát ra loa giúp người khuyết tật giao tiếp bình đẳng và thuận lợi với xã hội.</p>
+            </div>
+            <div class="btn-group">
+              <a href="assets/img/award-gold-award-international-creative-papers-conferenc.jpg" class="btn btn-secondary gallery-item" style="display: inline-flex; border: 1px solid var(--card-border);" data-caption="Chứng nhận Giải Vàng ICPC 2026 tại Hàn Quốc"><i class="fa-solid fa-image"></i> Xem Chứng nhận Vàng ICPC</a>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div>
+              <span class="school-tag" style="margin-bottom: 8px; font-size: 0.78rem;"><i class="fa-solid fa-robot"></i> Dự án AI & Robotics</span>
+              <h3>EDU-Bot AI – Trợ lý luyện thi tương tác</h3>
+              <p>Mô hình robot đồng hành kết hợp AI, IoT và phần cứng tương tác để tạo môi trường rèn luyện phản xạ tiếng Anh 100% tự nhiên cho học sinh: đối thoại trực tiếp, phân tích ngữ âm tức thì và tự động số hóa dữ liệu tiến độ học tập.</p>
+              <div style="margin-top: 10px;">
+                <a class="gallery-item" href="assets/img/act1-0.jpg" data-caption="Mô hình EDU-Bot AI luyện thi tương tác" style="max-width: 160px;">
+                  <img src="assets/img/act1-0.jpg" alt="EDU-Bot AI" loading="lazy">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards Section -->
+      <section id="awards-vi">
+        <div class="section-header">
+          <span class="section-badge">DANH HIỆU & GIẢI THƯỞNG</span>
+          <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Thành tích nổi bật</h2>
+          <p class="section-desc">Các giải thưởng quốc tế và danh hiệu học tập xuất sắc đạt được</p>
+        </div>
+
+        <div class="awards-grid">
+          <!-- AI-JAM US -->
+          <div class="card award-card gold">
+            <div class="award-medal"><i class="fa-solid fa-medal"></i></div>
+            <div class="award-body">
+              <span class="award-rank">HUY CHƯƠNG VÀNG · SILICON VALLEY</span>
+              <h4 class="award-title">Gold Award – AI-JAM US 2026 (Hoa Kỳ)</h4>
+              <div class="award-org">11th International AI Invention Challenge · Dự án cá nhân "SoundGuard – Kính thông minh AI giúp người khiếm thính nhận biết nguy hiểm và định hướng" · 06/09/2026</div>
+              <div class="btn-group">
+                <a href="assets/docs/aijam-us-2026-gold-award-soundguard.pdf" target="_blank" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.8rem;"><i class="fa-solid fa-file-pdf"></i> Xem chứng nhận PDF</a>
+              </div>
+            </div>
+            <a class="award-thumb gallery-item" href="assets/img/award-gold-award-aijam-us-2026-soundguard.jpg" data-caption="Chứng nhận Giải Vàng AI-JAM US 2026 tại Thung lũng Silicon">
+              <img src="assets/img/award-gold-award-aijam-us-2026-soundguard.jpg" alt="AI-JAM US Gold Certificate" loading="lazy">
+            </a>
+          </div>
+
+          <!-- ICPC Korea -->
+          <div class="card award-card gold">
+            <div class="award-medal"><i class="fa-solid fa-medal"></i></div>
+            <div class="award-body">
+              <span class="award-rank">HUY CHƯƠNG VÀNG · HÀN QUỐC</span>
+              <h4 class="award-title">Gold Award – ICPC 2026 (Hàn Quốc)</h4>
+              <div class="award-org">International Creative Papers Conference & Olympic (ICPC 2026) do Korea University Invention Association tổ chức · Dự án nhóm "Sign Language Recognition Using Computer Vision" · 16–17/01/2026</div>
+            </div>
+            <a class="award-thumb gallery-item" href="assets/img/award-gold-award-international-creative-papers-conferenc.jpg" data-caption="Chứng nhận Giải Vàng Hội nghị và Olympic Sáng tạo Quốc tế ICPC 2026 tại Hàn Quốc">
+              <img src="assets/img/award-gold-award-international-creative-papers-conferenc.jpg" alt="ICPC Korea Gold Certificate" loading="lazy">
+            </a>
+          </div>
+
+          <!-- Outstanding Student -->
+          <div class="card award-card">
+            <div class="award-medal"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="award-body">
+              <span class="award-rank">KHEN THƯỞNG HỌC THUẬT</span>
+              <h4 class="award-title">Bằng khen Học sinh xuất sắc – Lớp 10</h4>
+              <div class="award-org">Trường THPT Chuyên Khoa học Tự nhiên trao tặng vì thành tích học tập xuất sắc toàn diện trong năm học 2024–2025</div>
+              <div class="btn-group">
+                <a href="assets/docs/bang-khen-hoc-sinh-xuat-sac-lop-10.pdf" target="_blank" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.8rem;"><i class="fa-solid fa-file-pdf"></i> Xem chứng nhận PDF</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- HSGS Olympiad -->
+          <div class="card award-card">
+            <div class="award-medal"><i class="fa-solid fa-star"></i></div>
+            <div class="award-body">
+              <span class="award-rank">CHỨNG NHẬN OLYMPIC</span>
+              <h4 class="award-title">Giấy chứng nhận Olympic Chuyên KHTN (HSGS Olympiad)</h4>
+              <div class="award-org">Kỳ thi Olympic truyền thống do Trường THPT Chuyên Khoa học Tự nhiên – ĐHQGHN tổ chức</div>
+              <div class="btn-group">
+                <a href="assets/docs/giay-chung-nhan-tham-du-olympic-chuyen-khtn-hsgs-olympiad.pdf" target="_blank" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.8rem;"><i class="fa-solid fa-file-pdf"></i> Xem chứng nhận PDF</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 Tot Student -->
+          <div class="card award-card">
+            <div class="award-medal"><i class="fa-solid fa-certificate"></i></div>
+            <div class="award-body">
+              <span class="award-rank">DANH HIỆU TOÀN DIỆN</span>
+              <h4 class="award-title">Danh hiệu “Học sinh 3 Tốt” cấp Trường</h4>
+              <div class="award-org">Đoàn TNCS Hồ Chí Minh Trường ĐH Khoa học Tự nhiên – ĐHQGHN trao tặng (Đạo đức tốt – Học tập tốt – Thể lực tốt)</div>
+              <div class="btn-group">
+                <a href="assets/docs/hoc-sinh-3-tot-cap-truong.pdf" target="_blank" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.8rem;"><i class="fa-solid fa-file-pdf"></i> Xem chứng nhận PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section - NO % AND NO RADAR CHART -->
+      <section id="skills-vi">
+        <div class="section-header">
+          <span class="section-badge">NĂNG LỰC & CHUYÊN MÔN</span>
+          <h2 class="section-title"><i class="fa-solid fa-gears"></i> Kỹ năng & Công nghệ</h2>
+          <p class="section-desc">Năng lực chuyên môn được rèn luyện qua các dự án thực tế và quá trình học tập tại chuyên Tin HSGS</p>
+        </div>
+
+        <div class="skills-category-grid">
+          <!-- Lập trình -->
+          <div class="skill-cat-card">
+            <div class="cat-head">
+              <div class="cat-icon"><i class="fa-solid fa-code"></i></div>
+              <h4>Lập trình & Kỹ thuật cốt lõi</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-python"></i> Python (Nâng cao)</span>
+              <span class="skill-tag"><i class="fa-solid fa-c"></i> C / C++ (Thuật toán)</span>
+              <span class="skill-tag"><i class="fa-solid fa-database"></i> SQLite / SQL</span>
+              <span class="skill-tag"><i class="fa-solid fa-window-maximize"></i> CustomTkinter</span>
+              <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+              <span class="skill-tag"><i class="fa-solid fa-eye"></i> OpenCV (Computer Vision)</span>
+            </div>
+          </div>
+
+          <!-- AI & IoT -->
+          <div class="skill-cat-card">
+            <div class="cat-head">
+              <div class="cat-icon"><i class="fa-solid fa-brain"></i></div>
+              <h4>Trí tuệ nhân tạo & IoT</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Google Gemini API</span>
+              <span class="skill-tag"><i class="fa-solid fa-chart-line"></i> Prompt Engineering</span>
+              <span class="skill-tag"><i class="fa-solid fa-tower-broadcast"></i> Cảm biến siêu âm (HC-SR04)</span>
+              <span class="skill-tag"><i class="fa-solid fa-compass"></i> Cảm biến địa từ (QMC5883L)</span>
+              <span class="skill-tag"><i class="fa-solid fa-network-wired"></i> Kiến trúc IoT thời gian thực</span>
+              <span class="skill-tag"><i class="fa-solid fa-diagram-project"></i> Adaptive Learning Logic</span>
+            </div>
+          </div>
+
+          <!-- Nghiên cứu & Học thuật -->
+          <div class="skill-cat-card">
+            <div class="cat-head">
+              <div class="cat-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+              <h4>Nghiên cứu & Học thuật</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-pen-nib"></i> Viết bài báo khoa học quốc tế</span>
+              <span class="skill-tag"><i class="fa-solid fa-file-invoice"></i> Báo cáo kỹ thuật chi tiết</span>
+              <span class="skill-tag"><i class="fa-solid fa-flask-vial"></i> Thực nghiệm hệ sinh thái đô thị</span>
+              <span class="skill-tag"><i class="fa-solid fa-language"></i> Tiếng Anh học thuật (IELTS/SAT)</span>
+              <span class="skill-tag"><i class="fa-solid fa-chart-pie"></i> Xử lý & trực quan hóa dữ liệu</span>
+            </div>
+          </div>
+
+          <!-- Kỹ năng mềm & Hoạt động -->
+          <div class="skill-cat-card">
+            <div class="cat-head">
+              <div class="cat-icon"><i class="fa-solid fa-users-line"></i></div>
+              <h4>Kỹ năng mềm & Hoạt động</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-chalkboard-user"></i> Trợ giảng & Truyền cảm hứng</span>
+              <span class="skill-tag"><i class="fa-solid fa-list-check"></i> Quản lý khóa học (Camp Manager)</span>
+              <span class="skill-tag"><i class="fa-solid fa-people-group"></i> Làm việc nhóm & Giao tiếp</span>
+              <span class="skill-tag"><i class="fa-solid fa-hand-holding-heart"></i> Tinh thần cộng đồng & Thiện nguyện</span>
+              <span class="skill-tag"><i class="fa-solid fa-futbol"></i> Bóng đá & Thể lực tốt</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Extracurricular Activities & Community -->
+      <section id="activities-vi">
+        <div class="section-header">
+          <span class="section-badge">HOẠT ĐỘNG XÃ HỘI & NGOẠI KHÓA</span>
+          <h2 class="section-title"><i class="fa-solid fa-hand-holding-heart"></i> Hoạt động ngoại khóa & Thiện nguyện</h2>
+          <p class="section-desc">Đóng góp cho cộng đồng thông qua việc giảng dạy lập trình và sẻ chia yêu thương</p>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Trợ giảng, Tình nguyện viên & Quản lý (Manager) – HSGS Code Camp</h3>
+          <p>Đảm nhận vai trò giảng dạy, trợ giảng và quản lý tổ chức tại các khóa trại hè lập trình do Trường ĐH Khoa học Tự nhiên tổ chức (trong đó có khóa Archimedes Code Camp 2026), hướng dẫn các em học sinh làm quen với tư duy thuật toán và niềm vui sáng tạo phần mềm.</p>
+          <div class="btn-group">
+            <a href="assets/docs/chung-nhan-manager-archimedes-code-camp.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-certificate"></i> Chứng nhận Manager Archimedes Code Camp</a>
+            <a href="assets/docs/chung-nhan-tro-giang-hsgs-code-camp.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-certificate"></i> Chứng nhận Trợ giảng HSGS Code Camp</a>
+            <a href="assets/docs/chung-nhan-tinh-nguyen-vien-hsgs-code-camp.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-certificate"></i> Chứng nhận Tình nguyện viên HSGS Code Camp</a>
+          </div>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Chương trình trải nghiệm tại Đại học CUHK Thâm Quyến</h3>
+          <p>Tham gia chương trình giao lưu, trải nghiệm học thuật và khám phá môi trường nghiên cứu công nghệ tại The Chinese University of Hong Kong, Shenzhen (CUHK Shenzhen).</p>
+          <div class="btn-group">
+            <a href="assets/docs/chung-nhan-h-cuhk-tham-quyen.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Chứng nhận ĐH CUHK Thâm Quyến</a>
+          </div>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn (2026)</h3>
+          <p>Trực tiếp cùng nhóm thiện nguyện tổ chức thăm hỏi, tặng quà và sẻ chia với các bệnh nhi có hoàn cảnh khó khăn đang điều trị tại Bệnh viện Đa khoa Xanh Pôn; được Ban Giám đốc Bệnh viện gửi Thư cảm ơn chính thức.</p>
+          <div class="btn-group">
+            <a href="assets/docs/thu-cam-on-cua-bv-a-khoa-xanh-pon.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-envelope-open-text"></i> Thư cảm ơn của BV Đa khoa Xanh Pôn</a>
+          </div>
+          <div style="margin-top: 16px;">
+            <h5 style="font-size: 0.85rem; color: var(--text-sub); text-transform: uppercase; margin-bottom: 10px;">Hình ảnh hoạt động thiện nguyện tại BV Xanh Pôn:</h5>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="assets/img/act4-0.jpg" data-caption="Hoạt động thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn"><img src="assets/img/act4-0.jpg" alt="Xanh Pon 1" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-1.jpg" data-caption="Hoạt động thiện nguyện tại Bệnh viện Đa khoa Xanh Pôn"><img src="assets/img/act4-1.jpg" alt="Xanh Pon 2" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-2.jpg" data-caption="Tặng quà cho bệnh nhi tại BV Xanh Pôn"><img src="assets/img/act4-2.jpg" alt="Xanh Pon 3" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-3.jpg" data-caption="Tặng quà cho bệnh nhi tại BV Xanh Pôn"><img src="assets/img/act4-3.jpg" alt="Xanh Pon 4" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-4.jpg" data-caption="Gặp gỡ và động viên gia đình các bệnh nhi"><img src="assets/img/act4-4.jpg" alt="Xanh Pon 5" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-5.jpg" data-caption="Gặp gỡ và động viên gia đình các bệnh nhi"><img src="assets/img/act4-5.jpg" alt="Xanh Pon 6" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-6.jpg" data-caption="Hình ảnh lưu niệm cùng đoàn thiện nguyện"><img src="assets/img/act4-6.jpg" alt="Xanh Pon 7" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-7.jpg" data-caption="Hình ảnh lưu niệm cùng đoàn thiện nguyện"><img src="assets/img/act4-7.jpg" alt="Xanh Pon 8" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-8.jpg" data-caption="Trao gửi yêu thương tới các bệnh nhi"><img src="assets/img/act4-8.jpg" alt="Xanh Pon 9" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-9.jpg" data-caption="Trao gửi yêu thương tới các bệnh nhi"><img src="assets/img/act4-9.jpg" alt="Xanh Pon 10" loading="lazy"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Các dự án vì cộng đồng & Thiện nguyện khác</h3>
+          <p>Tích cực tham gia đa dạng các hoạt động xã hội: Dự án hỗ trợ bệnh nhân nhi tại Bệnh viện Đa khoa Hà Đông; Dự án chung tay chia sẻ cùng đồng bào vùng lũ lụt Yên Bái; Nhóm thiện nguyện “Ong chăm” hỗ trợ xây điểm trường tại vùng cao Nghệ An; Hoạt động từ thiện tại BV Hà Đông từ năm lớp 9; và là thành viên tích cực của Đội bóng đá Trường KHTN.</p>
+          <div class="btn-group">
+            <a href="assets/docs/da-benh-nhan-nhi-bv-ha-ong.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> DA bệnh nhân nhi BV Hà Đông</a>
+            <a href="assets/docs/da-chia-se-ong-bao-lu-yen-bai.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> DA chia sẻ đồng bào lũ Yên Bái</a>
+            <a href="assets/docs/nhom-ong-cham-xay-truong-nghe-an.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Nhóm Ong chăm xây trường Nghệ An</a>
+            <a href="assets/docs/gcn-tu-thien-bv-ha-ong-lop-9.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> GCN từ thiện BV Hà Đông (lớp 9)</a>
+          </div>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Chuyến trải nghiệm ngoại khóa Tuyên Quang 2026</h3>
+          <p>Chuyến đi thực tế và giao lưu tập thể tại Tuyên Quang cùng học sinh các trường: tham gia sinh hoạt chuyên đề, rèn luyện kỹ năng làm việc nhóm và giao lưu văn hóa thanh niên.</p>
+          <div style="margin-top: 16px;">
+            <h5 style="font-size: 0.85rem; color: var(--text-sub); text-transform: uppercase; margin-bottom: 10px;">Hình ảnh trải nghiệm ngoại khóa Tuyên Quang:</h5>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="assets/img/act6-0.jpg" data-caption="Trải nghiệm ngoại khóa Tuyên Quang 2026"><img src="assets/img/act6-0.jpg" alt="Tuyen Quang 1" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-1.jpg" data-caption="Trải nghiệm ngoại khóa Tuyên Quang 2026"><img src="assets/img/act6-1.jpg" alt="Tuyen Quang 2" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-2.jpg" data-caption="Hoạt động giao lưu tại hội trường Tuyên Quang"><img src="assets/img/act6-2.jpg" alt="Tuyen Quang 3" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-3.jpg" data-caption="Hoạt động giao lưu tại hội trường Tuyên Quang"><img src="assets/img/act6-3.jpg" alt="Tuyen Quang 4" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-4.jpg" data-caption="Làm việc nhóm và sinh hoạt tập thể"><img src="assets/img/act6-4.jpg" alt="Tuyen Quang 5" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-5.jpg" data-caption="Làm việc nhóm và sinh hoạt tập thể"><img src="assets/img/act6-5.jpg" alt="Tuyen Quang 6" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-6.jpg" data-caption="Kỷ niệm chuyến đi ngoại khóa Tuyên Quang"><img src="assets/img/act6-6.jpg" alt="Tuyen Quang 7" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-7.jpg" data-caption="Kỷ niệm chuyến đi ngoại khóa Tuyên Quang"><img src="assets/img/act6-7.jpg" alt="Tuyen Quang 8" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-8.jpg" data-caption="Giao lưu bạn bè và trải nghiệm thực tế"><img src="assets/img/act6-8.jpg" alt="Tuyen Quang 9" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-9.jpg" data-caption="Giao lưu bạn bè và trải nghiệm thực tế"><img src="assets/img/act6-9.jpg" alt="Tuyen Quang 10" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-10.jpg" data-caption="Lễ bế mạc chuyến đi ngoại khóa Tuyên Quang"><img src="assets/img/act6-10.jpg" alt="Tuyen Quang 11" loading="lazy"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Journey Section - NO roadmap image -->
+      <section id="journey-vi">
+        <div class="section-header">
+          <span class="section-badge">CÁC MỐC THỜI GIAN</span>
+          <h2 class="section-title"><i class="fa-solid fa-route"></i> Hành trình phát triển</h2>
+          <p class="section-desc">Từng bước trưởng thành qua các dấu mốc học tập, nghiên cứu và hoạt động xã hội</p>
+        </div>
+
+        <div class="timeline">
+          <!-- 2024 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <p>Khởi đầu các hoạt động tình nguyện vì cộng đồng tại Bệnh viện Đa khoa Hà Đông ngay từ năm lớp 9. Nỗ lực học tập và trúng tuyển vào Lớp Chuyên Tin – Trường THPT Chuyên Khoa học Tự nhiên (HSGS), ĐHQG Hà Nội.</p>
+              <div class="timeline-tags">
+                <span class="timeline-badge">Lớp 9 & Vào lớp 10 Chuyên Tin HSGS</span>
+                <span class="timeline-badge">Thiện nguyện BV Hà Đông</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content">
+              <p>Đạt danh hiệu Bằng khen Học sinh xuất sắc Lớp 10 HSGS; đảm nhận vai trò Trợ giảng và Tình nguyện viên tại trại hè lập trình HSGS Code Camp; tham gia chương trình giao lưu học thuật tại ĐH CUHK Thâm Quyến; được trao tặng danh hiệu “Học sinh 3 Tốt” cấp Trường.</p>
+              <div class="timeline-tags">
+                <span class="timeline-badge">Học sinh xuất sắc Lớp 10</span>
+                <span class="timeline-badge">Trợ giảng HSGS Code Camp</span>
+                <span class="timeline-badge">CUHK Shenzhen</span>
+                <span class="timeline-badge">Học sinh 3 Tốt</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2026 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2026</div>
+            <div class="timeline-content">
+              <p>Bứt phá mạnh mẽ trong nghiên cứu khoa học và sáng tạo công nghệ:</p>
+              <ul style="margin-left: 20px; margin-top: 8px; font-size: 0.93rem; color: var(--text-muted); line-height: 1.6;">
+                <li><strong>Tháng 01/2026:</strong> Giành Giải Vàng (Gold Award) tại cuộc thi ICPC 2026 tại Hàn Quốc với dự án "Sign Language Recognition Using Computer Vision".</li>
+                <li><strong>Tháng 05/2026:</strong> Công bố bài báo quốc tế trên tạp chí IJMSM về hệ thống bãi đỗ xe thông minh ứng dụng AI & IoT với vai trò Tác giả chính (First Author).</li>
+                <li><strong>Tháng 09/2026:</strong> Giành Giải Vàng (Gold Award) tại cuộc thi AI-JAM US 2026 tại Thung lũng Silicon với dự án cá nhân kính thông minh SoundGuard.</li>
+                <li>Hoàn thiện Sản phẩm cá nhân (SPCN) Vocab Catalyst – phần mềm AI hỗ trợ luyện từ vựng IELTS/SAT và công bố báo cáo kỹ thuật 30 trang.</li>
+                <li>Tham gia thiện nguyện tại BV Đa khoa Xanh Pôn và các hoạt động cứu trợ vùng lũ.</li>
+              </ul>
+              <div class="timeline-tags" style="margin-top: 12px;">
+                <span class="timeline-badge" style="background: #fef3c7; color: #d97706; font-weight: 700;">Gold Award ICPC Hàn Quốc</span>
+                <span class="timeline-badge" style="background: #dbeafe; color: #1e40af; font-weight: 700;">First Author Paper IJMSM</span>
+                <span class="timeline-badge" style="background: #fef3c7; color: #d97706; font-weight: 700;">Gold Award AI-JAM US Silicon Valley</span>
+                <span class="timeline-badge">SPCN Vocab Catalyst</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-brand">Lâm An Bình · Portfolio Học Sinh</div>
+        <p>Học sinh Lớp 11A2 Chuyên Tin · Trường THPT Chuyên Khoa học Tự nhiên (HSGS), ĐHQG Hà Nội</p>
+        <p style="font-size: 0.8rem; color: var(--text-sub);">© 2026 Lâm An Bình. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ENGLISH CONTENT PANE -->
+  <div class="pane-en" lang="en">
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <div class="brand">
+          <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
+          <span>Lam An Binh</span>
+          <span class="brand-badge">HSGS · 11A2 Informatics</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about-en">About</a></li>
+          <li><a href="#research-en">Research</a></li>
+          <li><a href="#spcn-en">Personal Project</a></li>
+          <li><a href="#awards-en">Awards</a></li>
+          <li><a href="#skills-en">Skills</a></li>
+          <li><a href="#activities-en">Activities</a></li>
+          <li><a href="#journey-en">Journey</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="school-tag">
+            <i class="fa-solid fa-award"></i>
+            <span>HUS High School for Gifted Students (HSGS) · VNU Hanoi</span>
+          </div>
+          <h1>Hello, I am <br><span class="hero-gradient-text">Lam An Binh</span></h1>
+          <p class="hero-lead">Grade-11 Informatics-major student with a strong passion for Artificial Intelligence, IoT, and Computer Science to solve urban challenges and contribute to society.</p>
+          
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-icon gold"><i class="fa-solid fa-trophy"></i></div>
+              <div class="stat-info">
+                <b>2 International Gold Medals</b>
+                <span>ICPC 2026 Korea & AI-JAM US 2026</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-file-lines"></i></div>
+              <div class="stat-info">
+                <b>First Author</b>
+                <span>AI/IoT International Paper (IJMSM 2026)</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-laptop-code"></i></div>
+              <div class="stat-info">
+                <b>Vocab Catalyst AI Software</b>
+                <span>Personal Project for IELTS/SAT Mastery</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+              <div class="stat-info">
+                <b>Code Camp TA & 5+ Charity Projects</b>
+                <span>Three Good Student University-Level Award</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <a href="#spcn-en" class="btn btn-primary"><i class="fa-solid fa-play"></i> View Personal Project</a>
+            <a href="#research-en" class="btn btn-secondary"><i class="fa-solid fa-book-open"></i> Read Scientific Paper</a>
+            <a href="#awards-en" class="btn btn-secondary"><i class="fa-solid fa-medal"></i> View Awards</a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="photo-frame">
+            <img src="assets/img/an-binh-typing.jpg" alt="Lam An Binh coding on his laptop">
+            <div class="photo-badge">
+              <div>
+                <div class="photo-badge-name"><span class="status-dot"></span>Lam An Binh</div>
+                <div class="photo-badge-sub">Informatics Major · HSGS Developer & Researcher</div>
+              </div>
+              <i class="fa-solid fa-code" style="color: #38bdf8; font-size: 1.2rem;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- About Section -->
+      <section id="about-en">
+        <div class="section-header">
+          <span class="section-badge">PROFILE OVERVIEW</span>
+          <h2 class="section-title"><i class="fa-solid fa-user-astronaut"></i> About Me</h2>
+          <p class="section-desc">The journey from technical curiosity to real-world community impact</p>
+        </div>
+
+        <div class="card about-box">
+          <div class="about-story">
+            <p>I am <strong>Lam An Binh</strong>, a grade-11 student majoring in Informatics at HUS High School for Gifted Students (HSGS), Vietnam National University, Hanoi. From my first lines of code and early microcontroller experiments, I have always believed that technology achieves its true meaning when it steps beyond the screen to solve genuine societal challenges.</p>
+            <p style="margin-top: 12px;">In 2026, I had the honor of being the first author of an international scientific paper on smart car parking systems using AI and IoT for Hanoi, published in the IJMSM journal. In the same year, I achieved the Gold Award at ICPC 2026 in Korea with a sign language recognition system and the Gold Award at AI-JAM US 2026 in Silicon Valley with SoundGuard — an AI smart glasses project for the deaf. In addition to scientific research, I developed Vocab Catalyst, an AI-powered IELTS/SAT vocabulary training desktop software, served as a manager and teaching assistant at HSGS Code Camp, and actively led and participated in charity projects for pediatric patients and flood-affected communities.</p>
+          </div>
+
+          <div class="about-quote">
+            <i class="fa-solid fa-quote-left"></i>
+            <span>“Smart cities do not begin with abstract concepts, but with solving very ordinary, everyday problems — such as finding an open parking spot or helping hearing-impaired people feel safe on busy streets.”</span>
+          </div>
+
+          <div class="pillar-grid">
+            <div class="pillar-item">
+              <i class="fa-solid fa-microchip"></i>
+              <h4>Applied AI & IoT</h4>
+              <p>Focusing on computer vision (OpenCV), generative AI architectures (Gemini API), and real-time embedded sensor networks.</p>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <h4>Knowledge Sharing</h4>
+              <p>Serving as course manager and teaching assistant at HSGS Code Camp, mentoring secondary and high school students in programming.</p>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <h4>Social Responsibility</h4>
+              <p>Actively engaged in philanthropic initiatives at Saint Paul Hospital, Ha Dong Hospital, and mountain school construction.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Section -->
+      <section id="research-en">
+        <div class="section-header">
+          <span class="section-badge">INTERNATIONAL PUBLICATION</span>
+          <h2 class="section-title"><i class="fa-solid fa-newspaper"></i> Scientific Research</h2>
+          <p class="section-desc">Applied research addressing metropolitan traffic and parking dilemmas in Hanoi</p>
+        </div>
+
+        <div class="card research-card">
+          <span class="author-badge"><i class="fa-solid fa-star"></i> First Author</span>
+          <h3 class="research-title">Applications of AI and IoT to Develop Intelligent Car Parking Systems in Hanoi, Vietnam</h3>
+          <div class="research-journal">International Journal of Multidisciplinary on Science and Management (IJMSM), Vol 3, Issue 2 (2026), pp. 163–168</div>
+          <div class="research-doi">DOI: 10.71141/30485037/V3I2P119</div>
+          
+          <p class="research-abstract">
+            The research stems from Hanoi's acute parking deficit, where existing infrastructure meets only 8–10% of practical demand, leading to urban congestion and significant fuel waste. We propose a comprehensive Intelligent Parking System (IPS) model: integrating ultrasonic and geomagnetic sensors for precise parking slot detection, OpenCV computer vision algorithms for automated license plate recognition (ALPR), real-time cloud synchronization, and a mobile reservation application that allows drivers to locate, navigate, and reserve parking spots ahead of arrival.
+          </p>
+
+          <div class="btn-group">
+            <a href="assets/docs/applications-of-ai-and-iot-to-develop-intelligent-car-parkin.pdf" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-file-pdf"></i> Full Paper PDF
+            </a>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <h5 style="font-size: 0.9rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">System diagrams & figures from the paper:</h5>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="assets/img/research-0.jpg" data-caption="Figure 1: Overall Architecture of the Intelligent Parking System (IPS)">
+                <img src="assets/img/research-0.jpg" alt="IPS Architecture" loading="lazy">
+              </a>
+              <a class="gallery-item" href="assets/img/research-1.jpg" data-caption="Figure 2: Sensor data processing and system logic flowchart">
+                <img src="assets/img/research-1.jpg" alt="Flowchart" loading="lazy">
+              </a>
+              <a class="gallery-item" href="assets/img/research-2.jpg" data-caption="Figure 3: Experimental computer vision results for ALPR license plate recognition">
+                <img src="assets/img/research-2.jpg" alt="OpenCV License Plate" loading="lazy">
+              </a>
+              <a class="gallery-item" href="assets/img/research-3.jpg" data-caption="Figure 4: Real-time driver mobile app UI and occupancy dashboard">
+                <img src="assets/img/research-3.jpg" alt="Mobile UI" loading="lazy">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPCN & Tech Projects Section -->
+      <section id="spcn-en">
+        <div class="section-header">
+          <span class="section-badge">PERSONAL PROJECT & INNOVATIONS</span>
+          <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Personal Projects & Technology</h2>
+          <p class="section-desc">Software systems and technical innovations researched & engineered by Lam An Binh</p>
+        </div>
+
+        <!-- SPCN Highlight Box with Video Embed -->
+        <div class="spcn-hero-box">
+          <div class="spcn-header">
+            <div>
+              <span class="spcn-badge"><i class="fa-solid fa-bolt"></i> FEATURED PERSONAL PROJECT</span>
+              <h3 class="spcn-title">Vocab Catalyst – AI-Powered IELTS/SAT Vocabulary Coach</h3>
+              <p class="spcn-sub">An intelligent desktop application: Dynamic exercise generation using Google Gemini AI, instant error diagnosis, an automated Mistake Bank, and an adaptive 7-day personal roadmap.</p>
+            </div>
+          </div>
+
+          <!-- Video Wrapper -->
+          <div class="video-wrapper">
+            <iframe src="https://drive.google.com/file/d/1SVd2l7Zusj6xLzHcin8Yav7s2VwqMTip/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+
+          <div class="btn-group">
+            <a href="https://drive.google.com/file/d/1SVd2l7Zusj6xLzHcin8Yav7s2VwqMTip/view?usp=drive_link" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-video"></i> Open Demo Video (Google Drive)
+            </a>
+            <a href="https://drive.google.com/drive/u/0/folders/1cNreUlTConvMPP2OhdJgLRnC3GO--VDk" target="_blank" class="btn btn-accent">
+              <i class="fa-solid fa-folder-open"></i> Project Folder (Google Drive)
+            </a>
+            <a href="assets/docs/bao-cao-ky-thuat-vocab-catalyst-30-trang-pdf.pdf" target="_blank" class="btn btn-secondary">
+              <i class="fa-solid fa-file-pdf"></i> 30-Page Technical Report (PDF)
+            </a>
+          </div>
+
+          <div class="spcn-features">
+            <div class="feat-card">
+              <h5><i class="fa-solid fa-wand-magic-sparkles"></i> Adaptive AI Generation</h5>
+              <p>Uses Google Gemini API to dynamically generate rich contextual exercises aligned with SAT/IELTS formats matched to learner mastery.</p>
+            </div>
+            <div class="feat-card">
+              <h5><i class="fa-solid fa-database"></i> Mistake Bank & Spaced Repetition</h5>
+              <p>Automatically records incorrect answers, explains root misconceptions, and creates targeted spaced repetition review sets.</p>
+            </div>
+            <div class="feat-card">
+              <h5><i class="fa-solid fa-calendar-check"></i> Personalized 7-Day Roadmap</h5>
+              <p>Adaptive scheduling algorithms plan daily tasks based on latest performance with integrated progress streaks and timely alerts.</p>
+            </div>
+            <div class="feat-card">
+              <h5><i class="fa-solid fa-layer-group"></i> 4-Tier Clean Architecture</h5>
+              <p>CustomTkinter modern UI → CatalystApp orchestration (multi-threaded) → GeminiService & db.py → Local SQLite database.</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 18px;">
+            <h5 style="color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">Application Screenshots & Feature Showcase:</h5>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="assets/img/act0-0.jpg" data-caption="Vocab Catalyst main training dashboard and user profile"><img src="assets/img/act0-0.jpg" alt="Vocab Catalyst 1" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-1.jpg" data-caption="Interactive SAT/IELTS contextual vocabulary quiz mode"><img src="assets/img/act0-1.jpg" alt="Vocab Catalyst 2" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-2.jpg" data-caption="Instant AI breakdown and semantic explanation of mistakes"><img src="assets/img/act0-2.jpg" alt="Vocab Catalyst 3" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-3.jpg" data-caption="Mistake Bank organizing vocabulary terms for re-practice"><img src="assets/img/act0-3.jpg" alt="Vocab Catalyst 4" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-4.jpg" data-caption="Calendar study plan and streak tracker"><img src="assets/img/act0-4.jpg" alt="Vocab Catalyst 5" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-5.jpg" data-caption="Notification scheduler and goal configuration"><img src="assets/img/act0-5.jpg" alt="Vocab Catalyst 6" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act0-6.jpg" data-caption="Learning progress analytics and performance charts"><img src="assets/img/act0-6.jpg" alt="Vocab Catalyst 7" loading="lazy"></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Projects Grid -->
+        <div class="projects-grid">
+          <div class="card project-card">
+            <div>
+              <span class="school-tag" style="margin-bottom: 8px; font-size: 0.78rem;"><i class="fa-solid fa-trophy" style="color: #f59e0b;"></i> Gold Award AI-JAM US 2026 (Silicon Valley)</span>
+              <h3>SoundGuard – AI Smart Glasses for the Hearing Impaired</h3>
+              <p>A personal wearable assistive device designed to detect critical acoustic hazards in urban environments: Continuously analyzes auditory surroundings (emergency sirens, collisions, danger cries) using AI and provides tactile haptic feedback with directional LED indicators.</p>
+            </div>
+            <div class="btn-group">
+              <a href="assets/docs/aijam-us-2026-gold-award-soundguard.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-certificate"></i> View Certificate (PDF)</a>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div>
+              <span class="school-tag" style="margin-bottom: 8px; font-size: 0.78rem;"><i class="fa-solid fa-trophy" style="color: #f59e0b;"></i> Gold Award ICPC 2026 (Korea)</span>
+              <h3>Sign Language Recognition Using Computer Vision</h3>
+              <p>A team project using computer vision and deep learning models to track and interpret sign language hand gestures in real-time, instantly converting them into subtitles and synthesized voice for barrier-free communication.</p>
+            </div>
+            <div class="btn-group">
+              <a href="assets/img/award-gold-award-international-creative-papers-conferenc.jpg" class="btn btn-secondary gallery-item" style="display: inline-flex; border: 1px solid var(--card-border);" data-caption="ICPC 2026 Gold Award Certificate (Korea)"><i class="fa-solid fa-image"></i> View Gold Certificate</a>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div>
+              <span class="school-tag" style="margin-bottom: 8px; font-size: 0.78rem;"><i class="fa-solid fa-robot"></i> AI & Robotics Project</span>
+              <h3>EDU-Bot AI – Interactive Exam-Prep Companion</h3>
+              <p>A hardware-software interactive companion combining AI, IoT, and robotics to deliver an immersion speaking environment for IELTS/SAT prep: real-time natural dialogue, phonetic analysis, and automated progress logging.</p>
+              <div style="margin-top: 10px;">
+                <a class="gallery-item" href="assets/img/act1-0.jpg" data-caption="EDU-Bot AI interactive test preparation companion" style="max-width: 160px;">
+                  <img src="assets/img/act1-0.jpg" alt="EDU-Bot AI" loading="lazy">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards Section -->
+      <section id="awards-en">
+        <div class="section-header">
+          <span class="section-badge">HONORS & RECOGNITION</span>
+          <h2 class="section-title"><i class="fa-solid fa-trophy"></i> Honors & Awards</h2>
+          <p class="section-desc">Distinguished international awards and institutional academic honors</p>
+        </div>
+
+        <div class="awards-grid">
+          <!-- AI-JAM US -->
+          <div class="card award-card gold">
+            <div class="award-medal"><i class="fa-solid fa-medal"></i></div>
+            <div class="award-body">
+              <span class="award-rank">GOLD MEDAL · SILICON VALLEY</span>
+              <h4 class="award-title">Gold Award – AI-JAM US 2026 (USA)</h4>
+              <div class="award-org">11th International AI Invention Challenge · Personal project: "SoundGuard – AI Smart Glasses That Let Deaf People See Danger and Feel Direction" · Sep 6, 2026</div>
+              <div class="btn-group">
+                <a href="assets/docs/aijam-us-2026-gold-award-soundguard.pdf" target="_blank" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.8rem;"><i class="fa-solid fa-file-pdf"></i> View Certificate (PDF)</a>
+              </div>
+            </div>
+            <a class="award-thumb gallery-item" href="assets/img/award-gold-award-aijam-us-2026-soundguard.jpg" data-caption="AI-JAM US 2026 Silicon Valley Gold Award Certificate">
+              <img src="assets/img/award-gold-award-aijam-us-2026-soundguard.jpg" alt="AI-JAM US Gold Certificate" loading="lazy">
+            </a>
+          </div>
+
+          <!-- ICPC Korea -->
+          <div class="card award-card gold">
+            <div class="award-medal"><i class="fa-solid fa-medal"></i></div>
+            <div class="award-body">
+              <span class="award-rank">GOLD MEDAL · KOREA</span>
+              <h4 class="award-title">Gold Award – ICPC 2026 (Korea)</h4>
+              <div class="award-org">International Creative Papers Conference & Olympic (ICPC 2026) organized by Korea University Invention Association · Team project: "Sign Language Recognition Using Computer Vision" · Jan 16–17, 2026</div>
+            </div>
+            <a class="award-thumb gallery-item" href="assets/img/award-gold-award-international-creative-papers-conferenc.jpg" data-caption="ICPC 2026 International Creative Papers Conference Gold Award Certificate">
+              <img src="assets/img/award-gold-award-international-creative-papers-conferenc.jpg" alt="ICPC Korea Gold Certificate" loading="lazy">
+            </a>
+          </div>
+
+          <!-- Outstanding Student -->
+          <div class="card award-card">
+            <div class="award-medal"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="award-body">
+              <span class="award-rank">ACADEMIC MERIT</span>
+              <h4 class="award-title">Certificate of Merit – Outstanding Student, Grade 10</h4>
+              <div class="award-org">Awarded by HUS High School for Gifted Students for exceptional academic performance throughout the 2024–2025 academic year</div>
+              <div class="btn-group">
+                <a href="assets/docs/bang-khen-hoc-sinh-xuat-sac-lop-10.pdf" target="_blank" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.8rem;"><i class="fa-solid fa-file-pdf"></i> View Certificate (PDF)</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- HSGS Olympiad -->
+          <div class="card award-card">
+            <div class="award-medal"><i class="fa-solid fa-star"></i></div>
+            <div class="award-body">
+              <span class="award-rank">OLYMPIAD HONORS</span>
+              <h4 class="award-title">Certificate of Participation – HSGS Olympiad</h4>
+              <div class="award-org">Traditional academic competition organized by HUS High School for Gifted Students – VNU Hanoi</div>
+              <div class="btn-group">
+                <a href="assets/docs/giay-chung-nhan-tham-du-olympic-chuyen-khtn-hsgs-olympiad.pdf" target="_blank" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.8rem;"><i class="fa-solid fa-file-pdf"></i> View Certificate (PDF)</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 Tot Student -->
+          <div class="card award-card">
+            <div class="award-medal"><i class="fa-solid fa-certificate"></i></div>
+            <div class="award-body">
+              <span class="award-rank">COMPREHENSIVE TITLE</span>
+              <h4 class="award-title">“Three Good Student” Award – University Level</h4>
+              <div class="award-org">Conferred by the Youth Union of VNU University of Science (Good Morality – Good Academics – Good Physical Fitness)</div>
+              <div class="btn-group">
+                <a href="assets/docs/hoc-sinh-3-tot-cap-truong.pdf" target="_blank" class="btn btn-secondary" style="padding: 4px 12px; font-size: 0.8rem;"><i class="fa-solid fa-file-pdf"></i> View Certificate (PDF)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section - NO % AND NO RADAR CHART -->
+      <section id="skills-en">
+        <div class="section-header">
+          <span class="section-badge">CORE CAPABILITIES</span>
+          <h2 class="section-title"><i class="fa-solid fa-gears"></i> Skills & Expertise</h2>
+          <p class="section-desc">Technical and research competencies honed through practical projects and HSGS coursework</p>
+        </div>
+
+        <div class="skills-category-grid">
+          <!-- Programming -->
+          <div class="skill-cat-card">
+            <div class="cat-head">
+              <div class="cat-icon"><i class="fa-solid fa-code"></i></div>
+              <h4>Programming & Core Software</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-python"></i> Python (Advanced)</span>
+              <span class="skill-tag"><i class="fa-solid fa-c"></i> C / C++ (Algorithms)</span>
+              <span class="skill-tag"><i class="fa-solid fa-database"></i> SQLite / SQL</span>
+              <span class="skill-tag"><i class="fa-solid fa-window-maximize"></i> CustomTkinter</span>
+              <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+              <span class="skill-tag"><i class="fa-solid fa-eye"></i> OpenCV (Computer Vision)</span>
+            </div>
+          </div>
+
+          <!-- AI & IoT -->
+          <div class="skill-cat-card">
+            <div class="cat-head">
+              <div class="cat-icon"><i class="fa-solid fa-brain"></i></div>
+              <h4>Artificial Intelligence & IoT</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Google Gemini API</span>
+              <span class="skill-tag"><i class="fa-solid fa-chart-line"></i> Prompt Engineering</span>
+              <span class="skill-tag"><i class="fa-solid fa-tower-broadcast"></i> Ultrasonic Sensors (HC-SR04)</span>
+              <span class="skill-tag"><i class="fa-solid fa-compass"></i> Geomagnetic Sensors (QMC5883L)</span>
+              <span class="skill-tag"><i class="fa-solid fa-network-wired"></i> Real-time IoT Architecture</span>
+              <span class="skill-tag"><i class="fa-solid fa-diagram-project"></i> Adaptive Learning Algorithms</span>
+            </div>
+          </div>
+
+          <!-- Research & Academics -->
+          <div class="skill-cat-card">
+            <div class="cat-head">
+              <div class="cat-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+              <h4>Research & Academics</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-pen-nib"></i> International Paper Writing</span>
+              <span class="skill-tag"><i class="fa-solid fa-file-invoice"></i> Technical Report Preparation</span>
+              <span class="skill-tag"><i class="fa-solid fa-flask-vial"></i> Empirical Urban Testing</span>
+              <span class="skill-tag"><i class="fa-solid fa-language"></i> Academic English (IELTS/SAT)</span>
+              <span class="skill-tag"><i class="fa-solid fa-chart-pie"></i> Data Analysis & Visualization</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-cat-card">
+            <div class="cat-head">
+              <div class="cat-icon"><i class="fa-solid fa-users-line"></i></div>
+              <h4>Leadership & Soft Skills</h4>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-chalkboard-user"></i> Teaching & Mentorship</span>
+              <span class="skill-tag"><i class="fa-solid fa-list-check"></i> Camp Management (Manager)</span>
+              <span class="skill-tag"><i class="fa-solid fa-people-group"></i> Teamwork & Cross-collaboration</span>
+              <span class="skill-tag"><i class="fa-solid fa-hand-holding-heart"></i> Community Philanthropy</span>
+              <span class="skill-tag"><i class="fa-solid fa-futbol"></i> Football & Physical Fitness</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Extracurricular Activities & Community -->
+      <section id="activities-en">
+        <div class="section-header">
+          <span class="section-badge">COMMUNITY LEADERSHIP</span>
+          <h2 class="section-title"><i class="fa-solid fa-hand-holding-heart"></i> Extracurriculars & Volunteering</h2>
+          <p class="section-desc">Giving back through technology education, disaster relief, and youth empowerment</p>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Teaching Assistant, Volunteer & Manager – HSGS Code Camp</h3>
+          <p>Served in leadership and instructional roles at programming camps organized by VNU University of Science — including Archimedes Code Camp 2026 — mentoring students in computer science fundamentals and algorithmic reasoning.</p>
+          <div class="btn-group">
+            <a href="assets/docs/chung-nhan-manager-archimedes-code-camp.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-certificate"></i> Manager Certificate – Archimedes Code Camp</a>
+            <a href="assets/docs/chung-nhan-tro-giang-hsgs-code-camp.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-certificate"></i> TA Certificate – HSGS Code Camp</a>
+            <a href="assets/docs/chung-nhan-tinh-nguyen-vien-hsgs-code-camp.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-certificate"></i> Volunteer Certificate – HSGS Code Camp</a>
+          </div>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Experience Program at CUHK Shenzhen</h3>
+          <p>Participated in an intensive academic immersion and technology research program at The Chinese University of Hong Kong, Shenzhen (CUHK Shenzhen).</p>
+          <div class="btn-group">
+            <a href="assets/docs/chung-nhan-h-cuhk-tham-quyen.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> CUHK Shenzhen Certificate</a>
+          </div>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Volunteering at Saint Paul General Hospital (2026)</h3>
+          <p>Organized gift distributions, patient visits, and emotional support for disadvantaged pediatric patients at Saint Paul General Hospital; honored with an official Certificate of Appreciation from Hospital Leadership.</p>
+          <div class="btn-group">
+            <a href="assets/docs/thu-cam-on-cua-bv-a-khoa-xanh-pon.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-envelope-open-text"></i> Saint Paul Hospital Thank-You Letter</a>
+          </div>
+          <div style="margin-top: 16px;">
+            <h5 style="font-size: 0.85rem; color: var(--text-sub); text-transform: uppercase; margin-bottom: 10px;">Saint Paul Hospital Volunteering Gallery:</h5>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="assets/img/act4-0.jpg" data-caption="Volunteering at Saint Paul General Hospital"><img src="assets/img/act4-0.jpg" alt="Saint Paul 1" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-1.jpg" data-caption="Volunteering at Saint Paul General Hospital"><img src="assets/img/act4-1.jpg" alt="Saint Paul 2" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-2.jpg" data-caption="Distributing gifts to pediatric patients"><img src="assets/img/act4-2.jpg" alt="Saint Paul 3" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-3.jpg" data-caption="Distributing gifts to pediatric patients"><img src="assets/img/act4-3.jpg" alt="Saint Paul 4" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-4.jpg" data-caption="Meeting and encouraging patients and families"><img src="assets/img/act4-4.jpg" alt="Saint Paul 5" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-5.jpg" data-caption="Meeting and encouraging patients and families"><img src="assets/img/act4-5.jpg" alt="Saint Paul 6" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-6.jpg" data-caption="Commemorative photos with the volunteering group"><img src="assets/img/act4-6.jpg" alt="Saint Paul 7" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-7.jpg" data-caption="Commemorative photos with the volunteering group"><img src="assets/img/act4-8.jpg" alt="Saint Paul 8" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-8.jpg" data-caption="Spreading joy and support in pediatric wards"><img src="assets/img/act4-8.jpg" alt="Saint Paul 9" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act4-9.jpg" data-caption="Spreading joy and support in pediatric wards"><img src="assets/img/act4-9.jpg" alt="Saint Paul 10" loading="lazy"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Additional Humanitarian & Community Initiatives</h3>
+          <p>Contributed to diverse civic causes: pediatric patient support at Ha Dong Hospital; emergency relief initiative for flood-stricken families in Yen Bai province; "Busy Bees" volunteer crew constructing classrooms in mountain districts of Nghe An province; charity work since 9th grade; active player on the VNU University of Science football squad.</p>
+          <div class="btn-group">
+            <a href="assets/docs/da-benh-nhan-nhi-bv-ha-ong.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Ha Dong Pediatric Project</a>
+            <a href="assets/docs/da-chia-se-ong-bao-lu-yen-bai.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Yen Bai Flood Relief</a>
+            <a href="assets/docs/nhom-ong-cham-xay-truong-nghe-an.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Nghe An School Construction</a>
+            <a href="assets/docs/gcn-tu-thien-bv-ha-ong-lop-9.pdf" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Ha Dong Hospital Charity (Grade 9)</a>
+          </div>
+        </div>
+
+        <div class="card activity-card">
+          <h3>Tuyên Quang Excursion 2026</h3>
+          <p>Inter-school leadership and cultural exchange retreat in Tuyên Quang: participating in auditorium seminars, collaborative team-building workshops, and community bonding.</p>
+          <div style="margin-top: 16px;">
+            <h5 style="font-size: 0.85rem; color: var(--text-sub); text-transform: uppercase; margin-bottom: 10px;">Tuyên Quang Excursion Gallery:</h5>
+            <div class="gallery-grid">
+              <a class="gallery-item" href="assets/img/act6-0.jpg" data-caption="Tuyên Quang Excursion 2026"><img src="assets/img/act6-0.jpg" alt="Tuyen Quang 1" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-1.jpg" data-caption="Tuyên Quang Excursion 2026"><img src="assets/img/act6-1.jpg" alt="Tuyen Quang 2" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-2.jpg" data-caption="Auditorium seminars in Tuyên Quang"><img src="assets/img/act6-2.jpg" alt="Tuyen Quang 3" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-3.jpg" data-caption="Auditorium seminars in Tuyên Quang"><img src="assets/img/act6-3.jpg" alt="Tuyen Quang 4" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-4.jpg" data-caption="Team-building challenges and workshops"><img src="assets/img/act6-4.jpg" alt="Tuyen Quang 5" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-5.jpg" data-caption="Team-building challenges and workshops"><img src="assets/img/act6-5.jpg" alt="Tuyen Quang 6" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-6.jpg" data-caption="Memories from Tuyên Quang trip"><img src="assets/img/act6-6.jpg" alt="Tuyen Quang 7" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-7.jpg" data-caption="Memories from Tuyên Quang trip"><img src="assets/img/act6-7.jpg" alt="Tuyen Quang 8" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-8.jpg" data-caption="Student networking and community moments"><img src="assets/img/act6-8.jpg" alt="Tuyen Quang 9" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-9.jpg" data-caption="Student networking and community moments"><img src="assets/img/act6-9.jpg" alt="Tuyen Quang 10" loading="lazy"></a>
+              <a class="gallery-item" href="assets/img/act6-10.jpg" data-caption="Closing ceremony of Tuyên Quang trip"><img src="assets/img/act6-10.jpg" alt="Tuyen Quang 11" loading="lazy"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Journey Section - NO roadmap image -->
+      <section id="journey-en">
+        <div class="section-header">
+          <span class="section-badge">KEY MILESTONES</span>
+          <h2 class="section-title"><i class="fa-solid fa-route"></i> Personal Journey</h2>
+          <p class="section-desc">Continuous growth across academics, research breakthrough, and social engagement</p>
+        </div>
+
+        <div class="timeline">
+          <!-- 2024 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <p>Initiated community healthcare volunteering at Ha Dong Hospital in 9th grade. Admitted to the prestigious Informatics-major program at HUS High School for Gifted Students (HSGS), VNU Hanoi.</p>
+              <div class="timeline-tags">
+                <span class="timeline-badge">Admitted to HSGS Informatics Major</span>
+                <span class="timeline-badge">Ha Dong Hospital Volunteering</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2025 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content">
+              <p>Conferred Certificate of Merit for Outstanding Academic Performance in Grade 10; served as Teaching Assistant and Volunteer at HSGS Code Camp; participated in the CUHK Shenzhen immersion program; honored with the university-level "Three Good Student" award.</p>
+              <div class="timeline-tags">
+                <span class="timeline-badge">Outstanding Student (Grade 10)</span>
+                <span class="timeline-badge">HSGS Code Camp TA</span>
+                <span class="timeline-badge">CUHK Shenzhen Program</span>
+                <span class="timeline-badge">Three Good Student Title</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2026 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2026</div>
+            <div class="timeline-content">
+              <p>Landmark achievements in scientific research and technical invention:</p>
+              <ul style="margin-left: 20px; margin-top: 8px; font-size: 0.93rem; color: var(--text-muted); line-height: 1.6;">
+                <li><strong>Jan 2026:</strong> Won the Gold Award at ICPC 2026 in Korea with "Sign Language Recognition Using Computer Vision".</li>
+                <li><strong>May 2026:</strong> Published an international paper in the IJMSM journal on AI & IoT smart car parking as First Author.</li>
+                <li><strong>Sep 2026:</strong> Won the Gold Award at AI-JAM US 2026 in Silicon Valley for the personal invention SoundGuard.</li>
+                <li>Engineered Vocab Catalyst (AI-powered IELTS/SAT vocabulary software) and authored its comprehensive 30-page technical report.</li>
+                <li>Led hospital volunteering at Saint Paul Hospital and flood relief initiatives.</li>
+              </ul>
+              <div class="timeline-tags" style="margin-top: 12px;">
+                <span class="timeline-badge" style="background: #fef3c7; color: #d97706; font-weight: 700;">Gold Award ICPC Korea</span>
+                <span class="timeline-badge" style="background: #dbeafe; color: #1e40af; font-weight: 700;">First Author Paper IJMSM</span>
+                <span class="timeline-badge" style="background: #fef3c7; color: #d97706; font-weight: 700;">Gold Award AI-JAM US Silicon Valley</span>
+                <span class="timeline-badge">Vocab Catalyst AI Software</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-brand">Lam An Binh · Student Portfolio</div>
+        <p>Informatics Major · HUS High School for Gifted Students (HSGS), VNU Hanoi</p>
+        <p style="font-size: 0.8rem; color: var(--text-sub);">© 2026 Lam An Binh. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Interactive Lightbox Modal -->
+  <div class="lightbox" id="lightboxModal">
+    <div class="lightbox-content">
+      <div class="lightbox-close"><i class="fa-solid fa-xmark"></i></div>
+      <img id="lightboxImg" src="" alt="Enlarged preview">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Language Switcher & Lightbox -->
+  <script>
+    // Language switching with localStorage persistence
+    function setLanguage(lang) {
+      document.body.classList.toggle('lang-en', lang === 'en');
+      document.documentElement.lang = lang;
+      try {
+        localStorage.setItem('portfolio_lang', lang);
+      } catch (e) {}
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+      });
+    });
+
+    // Default or stored language
+    let initialLang = 'vi';
+    try {
+      const stored = localStorage.getItem('portfolio_lang');
+      if (stored) initialLang = stored;
+    } catch (e) {}
+    setLanguage(initialLang);
+
+    // Lightbox modal functionality
+    const lightbox = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+
+    function openLightbox(src, caption) {
+      lightboxImg.src = src;
+      lightboxCaption.textContent = caption || '';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxImg.src = '';
+    }
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        const src = item.getAttribute('href') || item.dataset.src;
+        const caption = item.dataset.caption || item.querySelector('img')?.getAttribute('alt') || '';
+        if (src) openLightbox(src, caption);
+      });
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox || e.target === lightboxClose || e.target.closest('.lightbox-close')) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
