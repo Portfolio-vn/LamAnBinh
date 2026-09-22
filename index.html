@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,51 +55,52 @@
       padding: 0 24px;
     }
 
-    /* Floating Language Switcher */
-    .lang-switcher-wrap {
-      position: fixed;
-      top: 18px;
-      right: 20px;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+    /* Embedded Language Switcher inside Navbar */
+    .lang-switcher {
+      background: #f1f5f9;
       border: 1px solid var(--card-border);
       border-radius: var(--radius-full);
-      padding: 4px;
-      box-shadow: var(--shadow-md);
-      display: flex;
-      gap: 4px;
+      padding: 3px;
+      display: inline-flex;
+      gap: 2px;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
     }
     .lang-btn {
       border: 0;
       background: transparent;
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: var(--radius-full);
       font-family: inherit;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--text-sub);
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
+      white-space: nowrap;
     }
     .lang-btn.active {
       background: var(--accent-gradient);
       color: #ffffff;
-      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
     }
 
-    /* Bilingual Pane visibility */
-    .pane-en { display: none; }
-    body.lang-en .pane-en { display: block; }
+    /* Bilingual Pane visibility - DEFAULT ENGLISH */
+    .pane-vi { display: none; }
+    .pane-en { display: block; }
+
+    body.lang-vi .pane-vi { display: block; }
+    body.lang-vi .pane-en { display: none; }
+
     body.lang-en .pane-vi { display: none; }
+    body.lang-en .pane-en { display: block; }
 
     /* Sticky Navigation */
     .navbar {
       position: sticky;
       top: 0;
       z-index: 90;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--card-border);
@@ -109,16 +110,21 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
       height: 68px;
     }
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-weight: 800;
       font-size: 1.15rem;
       color: var(--text-main);
       font-family: 'Space Grotesk', sans-serif;
+      flex-shrink: 0;
+    }
+    .brand i {
+      color: var(--primary);
     }
     .brand-badge {
       font-size: 0.72rem;
@@ -129,26 +135,40 @@
       color: var(--primary);
       border: 1px solid rgba(37, 99, 235, 0.2);
       letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 2px;
       list-style: none;
     }
     .nav-links a {
-      padding: 8px 14px;
+      padding: 7px 11px;
       border-radius: var(--radius-full);
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       font-weight: 600;
       color: var(--text-muted);
       transition: all 0.2s ease;
+      white-space: nowrap;
     }
     .nav-links a:hover {
       color: var(--primary);
       background: var(--primary-light);
     }
 
+    @media (max-width: 1140px) {
+      .nav-links a { padding: 6px 8px; font-size: 0.8rem; }
+      .brand-badge { display: none; }
+    }
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+    }
     /* Hero Section */
     .hero {
       padding: 60px 0 40px;
@@ -1018,31 +1038,31 @@
 </head>
 <body>
 
-  <!-- Floating Language Switcher -->
-  <div class="lang-switcher-wrap">
-    <button class="lang-btn active" data-lang="vi">Tiếng Việt</button>
-    <button class="lang-btn" data-lang="en">English</button>
-  </div>
-
   <!-- VIETNAMESE CONTENT PANE -->
   <div class="pane-vi" lang="vi">
     <!-- Sticky Navigation -->
     <nav class="navbar">
       <div class="container nav-inner">
         <div class="brand">
-          <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
+          <i class="fa-solid fa-graduation-cap"></i>
           <span>Lâm An Bình</span>
           <span class="brand-badge">HSGS · 11A2 Tin</span>
         </div>
-        <ul class="nav-links">
-          <li><a href="#about-vi">Giới thiệu</a></li>
-          <li><a href="#research-vi">Nghiên cứu</a></li>
-          <li><a href="#spcn-vi">Sản phẩm cá nhân</a></li>
-          <li><a href="#awards-vi">Thành tích</a></li>
-          <li><a href="#skills-vi">Kỹ năng</a></li>
-          <li><a href="#activities-vi">Hoạt động</a></li>
-          <li><a href="#journey-vi">Hành trình</a></li>
-        </ul>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#about-vi">Giới thiệu</a></li>
+            <li><a href="#research-vi">Nghiên cứu</a></li>
+            <li><a href="#spcn-vi">Sản phẩm cá nhân</a></li>
+            <li><a href="#awards-vi">Thành tích</a></li>
+            <li><a href="#skills-vi">Kỹ năng</a></li>
+            <li><a href="#activities-vi">Hoạt động</a></li>
+            <li><a href="#journey-vi">Hành trình</a></li>
+          </ul>
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn active" data-lang="vi">VI</button>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -1613,19 +1633,25 @@
     <nav class="navbar">
       <div class="container nav-inner">
         <div class="brand">
-          <i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i>
+          <i class="fa-solid fa-graduation-cap"></i>
           <span>Lam An Binh</span>
           <span class="brand-badge">HSGS · 11A2 Informatics</span>
         </div>
-        <ul class="nav-links">
-          <li><a href="#about-en">About</a></li>
-          <li><a href="#research-en">Research</a></li>
-          <li><a href="#spcn-en">Personal Project</a></li>
-          <li><a href="#awards-en">Awards</a></li>
-          <li><a href="#skills-en">Skills</a></li>
-          <li><a href="#activities-en">Activities</a></li>
-          <li><a href="#journey-en">Journey</a></li>
-        </ul>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#about-en">About</a></li>
+            <li><a href="#research-en">Research</a></li>
+            <li><a href="#spcn-en">Personal Project</a></li>
+            <li><a href="#awards-en">Awards</a></li>
+            <li><a href="#skills-en">Skills</a></li>
+            <li><a href="#activities-en">Activities</a></li>
+            <li><a href="#journey-en">Journey</a></li>
+          </ul>
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="vi">VI</button>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -2200,12 +2226,13 @@
 
   <!-- JavaScript for Language Switcher & Lightbox -->
   <script>
-    // Language switching with localStorage persistence
+    // Language switching with English as default
     function setLanguage(lang) {
+      document.body.classList.toggle('lang-vi', lang === 'vi');
       document.body.classList.toggle('lang-en', lang === 'en');
       document.documentElement.lang = lang;
       try {
-        localStorage.setItem('portfolio_lang', lang);
+        localStorage.setItem('portfolio_lang_pref', lang);
       } catch (e) {}
 
       document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -2219,10 +2246,10 @@
       });
     });
 
-    // Default or stored language
-    let initialLang = 'vi';
+    // Default language is strictly English
+    let initialLang = 'en';
     try {
-      const stored = localStorage.getItem('portfolio_lang');
+      const stored = localStorage.getItem('portfolio_lang_pref');
       if (stored) initialLang = stored;
     } catch (e) {}
     setLanguage(initialLang);
